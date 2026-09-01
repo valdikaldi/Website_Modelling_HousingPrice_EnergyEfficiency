@@ -1,6 +1,21 @@
-.Rproj.user
+# R enviroment
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
 
-/.quarto/
+# Quarto
+.quarto/
+_site/
+_book/
+
+# LaTeX / PDF build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
