@@ -1,85 +1,242 @@
 /* =========================================================
    QUARTO CUSTOM CSS
+   Professional academic / research presentation
    ========================================================= */
 
 
 /* =========================================================
-   NAVBAR
+   1. NAVBAR
    ========================================================= */
 
 .navbar {
   --bs-navbar-padding-y: 0.02rem;
 }
 
+
+/* ---------------------------------------------------------
+   LIGHT MODE NAVBAR
+   --------------------------------------------------------- */
+
+body.quarto-light #quarto-header .navbar {
+  /* background-color: #d3d3d3 !important; */
+   background-color: #343a40!important;
+  border-bottom: 1px solid #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   DARK MODE NAVBAR
+   --------------------------------------------------------- */
+
+body.quarto-dark #quarto-header .navbar {
+  background-color: #25282b !important;
+  border-bottom: 1px solid #383c40;
+}
+
+
+/* ---------------------------------------------------------
+   NAVBAR TEXT - LIGHT
+   --------------------------------------------------------- */
+
+body.quarto-light #quarto-header .navbar a {
+  /* color: #333333 !important; */
+  color: #ffffff !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVBAR TEXT - DARK
+   --------------------------------------------------------- */
+
+body.quarto-dark #quarto-header .navbar a {
+  color: #e2e5e8 !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVBAR HOVER
+   --------------------------------------------------------- */
+
+body.quarto-light #quarto-header .navbar a:hover {
+  color: #000000 !important;
+}
+
+body.quarto-dark #quarto-header .navbar a:hover {
+  color: #ffffff !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVBAR ICONS - LIGHT
+   --------------------------------------------------------- */
+
+body.quarto-light #quarto-header .navbar i,
+body.quarto-light #quarto-header .navbar .bi {
+  color: #ffffff !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVBAR ICONS - DARK
+   --------------------------------------------------------- */
+
+body.quarto-dark #quarto-header .navbar i,
+body.quarto-dark #quarto-header .navbar .bi {
+  color: #ffffff !important;
+}
+
 /* =========================================================
-   QUARTO TOP NAVBAR
+   THEME SWITCH BUTTON
    ========================================================= */
 
-/* Light mode
-body.quarto-light .navbar {
+.quarto-color-scheme-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  margin: 0 4px;
+
+  border-radius: 50%;
+  border: 1px solid;
+
+  text-decoration: none !important;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+
+/* ---------------------------------------------------------
+   LIGHT MODE
+   --------------------------------------------------------- */
+
+body.quarto-light .quarto-color-scheme-toggle {
+  color: #343a40 !important;
+
+  /* Light grey circle */
   background-color: #d3d3d3 !important;
+  border-color: #adb5bd !important;
+
+  opacity: 1 !important;
 }
 
-/* Dark mode */
-body.quarto-dark .navbar {
-  background-color: #d3d3d3 !important;
-}
+body.quarto-light .quarto-color-scheme-toggle:hover {
+  color: #212529 !important;
 
+  background-color: #c4c4c4 !important;
+  border-color: #868e96 !important;
 
-/* Navbar text - light mode */
-body.quarto-light .navbar a {
-  color: #333333 !important;
-}
-
-/* Navbar text - dark mode */
-body.quarto-dark .navbar a {
-  color: #333333 !important;
+  transform: scale(1.05);
 }
 
 
-/* Navbar icons */
-body.quarto-dark .navbar i,
-body.quarto-dark .navbar .bi {
-  color: #333333 !important;
-} 
+/* ---------------------------------------------------------
+   DARK MODE
+   --------------------------------------------------------- */
 
+body.quarto-dark .quarto-color-scheme-toggle {
+  color: #ffffff !important;
+
+  background-color: #343a40 !important;
+  border-color: #6c757d !important;
+
+  opacity: 1 !important;
+}
+
+body.quarto-dark .quarto-color-scheme-toggle:hover {
+  color: #ffffff !important;
+
+  background-color: #495057 !important;
+  border-color: #adb5bd !important;
+
+  transform: scale(1.05);
+}
+
+
+/* ---------------------------------------------------------
+   ICON
+   --------------------------------------------------------- */
+
+.quarto-color-scheme-toggle i,
+.quarto-color-scheme-toggle .bi {
+  color: inherit !important;
+  font-size: 17px;
+}
 
 /* =========================================================
-   LEFT SIDEBAR
-   ---------------------------------------------------------
-   The sidebar intentionally remains GREY in both
-   light and dark mode.
+   2. LEFT SIDEBAR
    ========================================================= */
 
-#quarto-sidebar {
-  background-color: #d3d3d3;
+
+/* ---------------------------------------------------------
+   LIGHT MODE
+   --------------------------------------------------------- */
+
+body.quarto-light #quarto-sidebar {
+  background-color: #d3d3d3 !important;
+  border-right: 1px solid #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   DARK MODE
+   --------------------------------------------------------- */
+
+body.quarto-dark #quarto-sidebar {
+  background-color: #25282b !important;
+  border-right: 1px solid #383c40;
 }
 
 
 /* =========================================================
-   SIDEBAR LOGO
+   3. SIDEBAR LOGO
    ========================================================= */
 
 .sidebar-logo {
-  border-radius: 10rem;
+  border-radius: 50%;
 }
 
 
 /* =========================================================
-   SIDEBAR TOOLS
+   4. SIDEBAR TOOLS
    ========================================================= */
 
 .sidebar-tools-main {
   margin-top: 10px;
 }
 
-.sidebar-tools-main i {
-  font-size: 20px;
+
+/* Light mode */
+
+body.quarto-light .sidebar-tools-main i,
+body.quarto-light .sidebar-tools-main .bi {
+  color: #555b61;
+}
+
+
+/* Dark mode */
+
+body.quarto-dark .sidebar-tools-main i,
+body.quarto-dark .sidebar-tools-main .bi {
+  color: #c1c6ca;
+}
+
+
+/* Icon size */
+
+.sidebar-tools-main i,
+.sidebar-tools-main .bi {
+  font-size: 18px;
 }
 
 
 /* =========================================================
-   SIDEBAR HEADER / SEARCH
+   5. SIDEBAR HEADER / SEARCH
    ========================================================= */
 
 .sidebar-header {
@@ -91,24 +248,67 @@ body.quarto-dark .navbar .bi {
 }
 
 
-/* =========================================================
-   SIDEBAR MENU ITEMS
-   ========================================================= */
+/* Search box - light */
 
-.sidebar-item-container {
-  padding: 5px;
-  margin-bottom: 5px;
-  border-radius: 3px;
-  box-sizing: border-box;
+body.quarto-light #quarto-sidebar input {
+  background-color: #ffffff;
+  border: 1px solid #cdd1d5;
+  color: #333333;
+}
+
+
+/* Search box - dark */
+
+body.quarto-dark #quarto-sidebar input {
+  background-color: #303438;
+  border: 1px solid #454a4f;
+  color: #e2e5e8;
+}
+
+
+/* Search placeholder - dark */
+
+body.quarto-dark #quarto-sidebar input::placeholder {
+  color: #9ba2a8;
 }
 
 
 /* =========================================================
-   SIDEBAR LINKS
+   6. SIDEBAR MENU ITEMS
    ========================================================= */
 
-.sidebar-item-container a {
-  color: #333333;
+.sidebar-item-container {
+  padding: 5px 7px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+
+/* =========================================================
+   7. SIDEBAR LINKS
+   ========================================================= */
+
+
+/* Light mode */
+
+body.quarto-light .sidebar-item-container a {
+  color: #3d4348;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+
+/* Dark mode */
+
+body.quarto-dark .sidebar-item-container a {
+  color: #d5d9dd;
   text-decoration: none;
   display: block;
   cursor: pointer;
@@ -117,34 +317,78 @@ body.quarto-dark .navbar .bi {
 
 
 /* =========================================================
-   ACTIVE SIDEBAR PAGE
+   8. SIDEBAR HOVER
    ========================================================= */
 
-.sidebar-item-container:has(a.active) {
-  background-color: #808080;
+
+/* Light */
+
+body.quarto-light .sidebar-item-container:hover {
+  background-color: #e3e5e7;
 }
 
-.sidebar-item-container a.active .chapter-number,
-.sidebar-item-container a.active .chapter-title,
-.sidebar-item-container a.active .menu-text {
-  color: #ffffff;
+
+/* Dark */
+
+body.quarto-dark .sidebar-item-container:hover {
+  background-color: #303438;
 }
 
 
 /* =========================================================
-   SIDEBAR HOVER EFFECT
+   9. ACTIVE SIDEBAR PAGE
+   ========================================================= */
+
+
+/* Light */
+
+body.quarto-light .sidebar-item-container:has(a.active) {
+  background-color: #808080;
+}
+
+
+/* Dark */
+
+body.quarto-dark .sidebar-item-container:has(a.active) {
+  background-color: #41464b;
+}
+
+
+/* ---------------------------------------------------------
+   Active page text
+   --------------------------------------------------------- */
+
+.sidebar-item-container a.active .chapter-number,
+.sidebar-item-container a.active .chapter-title,
+.sidebar-item-container a.active .menu-text {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   10. SIDEBAR HOVER UNDERLINE
    ========================================================= */
 
 .sidebar-item-container a::after {
   content: "";
   position: absolute;
+
   left: 50%;
   bottom: -2px;
+
   width: 0;
   height: 1px;
-  background: #666666;
-  transition: all 0.25s;
+
+  background-color: currentColor;
+
+  opacity: 0.45;
+
+  transition:
+    width 0.25s ease,
+    left 0.25s ease;
 }
+
 
 .sidebar-item-container a:hover::after {
   width: 85%;
@@ -153,9 +397,7 @@ body.quarto-dark .navbar .bi {
 
 
 /* =========================================================
-   MAIN QUARTO CONTENT
-   ---------------------------------------------------------
-   Quarto's YAML grid controls the page layout.
+   11. MAIN QUARTO CONTENT
    ========================================================= */
 
 #quarto-content {
@@ -164,44 +406,49 @@ body.quarto-dark .navbar .bi {
 
 
 /* =========================================================
-   DOCUMENT CONTENT
+   12. DOCUMENT CONTENT
    ========================================================= */
 
 #quarto-document-content {
   width: 100%;
   max-width: none;
+
   margin-left: 0;
   margin-right: 0;
+
   padding-left: clamp(0.75rem, 1.5vw, 1.75rem);
   padding-right: clamp(0.75rem, 1vw, 1.25rem);
+
   box-sizing: border-box;
 }
 
 
-/* =========================================================
-   EXISTING .content CLASS
-   ========================================================= */
+/* Existing .content class */
 
 .content {
   width: 100%;
   max-width: none;
+
   margin-left: 0;
   margin-right: 0;
+
   box-sizing: border-box;
 }
 
 
 /* =========================================================
-   RIGHT MARGIN SIDEBAR
+   13. RIGHT MARGIN SIDEBAR
    ---------------------------------------------------------
-   Width remains controlled by Quarto YAML.
+   Quarto controls the actual width.
    ========================================================= */
 
 #quarto-margin-sidebar {
   padding-left: 0;
   padding-right: 0;
+
   box-sizing: border-box;
 }
+
 
 #quarto-margin-sidebar > * {
   margin-left: 0;
@@ -210,153 +457,36 @@ body.quarto-dark .navbar .bi {
 
 
 /* =========================================================
-   PARAGRAPH TEXT
+   14. PARAGRAPH TEXT
    ========================================================= */
 
 .paratext {
   width: 100%;
+
   text-align: justify;
+
   line-height: 1.75;
 }
 
 
 /* =========================================================
-   QUOTATION TEXT
+   15. QUOTATION TEXT
    ========================================================= */
 
 .paratext .paratext_quote {
   width: min(80%, 75ch);
+
   margin-left: auto;
   margin-right: auto;
+
   text-align: justify;
+
   line-height: 1.75;
 }
 
 
 /* =========================================================
-   GENERAL LINKS
-   ========================================================= */
-
-a {
-  color: rgb(68, 106, 190);
-  cursor: pointer;
-}
-
-a:hover {
-  color: rgb(106, 137, 203);
-}
-
-
-/* =========================================================
-   CITATION LINKS
-   ========================================================= */
-
-.citation a {
-  color: rgb(68, 106, 190);
-  cursor: pointer;
-  position: relative;
-}
-
-.citation a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -2px;
-  width: 0;
-  height: 1px;
-  background: rgb(32, 68, 144);
-  transition: all 0.45s;
-}
-
-.citation a:hover::after {
-  width: 100%;
-  left: 0;
-}
-
-.citation a:hover {
-  color: rgb(106, 137, 203);
-}
-
-
-/* =========================================================
-   FIGURE / TABLE CROSS-REFERENCES
-   ========================================================= */
-
-.quarto-xref {
-  color: rgb(68, 106, 190);
-  cursor: pointer;
-  position: relative;
-}
-
-.quarto-xref:hover {
-  color: rgb(106, 137, 203);
-}
-
-
-/* =========================================================
-   FIGURE CAPTIONS
-   ========================================================= */
-
-figcaption {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-
-/* =========================================================
-   FIGURE / TABLE FOOTNOTES
-   ========================================================= */
-
-.text_footnote_fig_tables {
-  margin-bottom: 2.5rem;
-  font-size: smaller;
-  font-style: italic;
-}
-
-
-/* =========================================================
-   IMAGES
-   ========================================================= */
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-
-/* =========================================================
-   TABLES
-   ========================================================= */
-
-.table {
-  max-width: 100%;
-}
-
-
-/* =========================================================
-   BLOCKQUOTES
-   ========================================================= */
-
-blockquote {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   LISTS
-   ========================================================= */
-
-.paratext ul,
-.paratext ol {
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   HEADINGS
+   16. HEADINGS
    ========================================================= */
 
 h1,
@@ -369,118 +499,373 @@ h6 {
 }
 
 
+/* Dark mode headings */
+
+body.quarto-dark h1,
+body.quarto-dark h2,
+body.quarto-dark h3,
+body.quarto-dark h4,
+body.quarto-dark h5,
+body.quarto-dark h6 {
+  color: #f0f1f2;
+}
+
+
 /* =========================================================
-   HORIZONTAL RULE
+   17. GENERAL LINKS
+   ========================================================= */
+
+
+/* Light mode */
+
+body.quarto-light a {
+  color: rgb(68, 106, 190);
+}
+
+
+/* Dark mode */
+
+body.quarto-dark a {
+  color: #8eafe8;
+}
+
+
+/* Light hover */
+
+body.quarto-light a:hover {
+  color: rgb(106, 137, 203);
+}
+
+
+/* Dark hover */
+
+body.quarto-dark a:hover {
+  color: #b4c9ef;
+}
+
+
+/* =========================================================
+   18. CITATION LINKS
+   ========================================================= */
+
+.citation a {
+  cursor: pointer;
+  position: relative;
+}
+
+
+/* Citation underline */
+
+.citation a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -2px;
+
+  width: 0;
+  height: 1px;
+
+  background-color: currentColor;
+
+  opacity: 0.8;
+
+  transition:
+    width 0.35s ease,
+    left 0.35s ease;
+}
+
+
+.citation a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
+/* =========================================================
+   19. FIGURE / TABLE CROSS-REFERENCES
+   ========================================================= */
+
+.quarto-xref {
+  cursor: pointer;
+  position: relative;
+}
+
+
+/* =========================================================
+   20. FIGURE CAPTIONS
+   ========================================================= */
+
+figcaption {
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   21. FIGURE / TABLE FOOTNOTES
+   ========================================================= */
+
+.text_footnote_fig_tables {
+  margin-bottom: 2.5rem;
+
+  font-size: smaller;
+  font-style: italic;
+}
+
+
+body.quarto-dark .text_footnote_fig_tables {
+  color: #aeb5bb;
+}
+
+
+/* =========================================================
+   22. IMAGES
+   ========================================================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   23. TABLES
+   ========================================================= */
+
+.table {
+  max-width: 100%;
+}
+
+
+/* Light-mode table borders */
+
+body.quarto-light table {
+  border-color: #dfe2e5;
+}
+
+
+/* Dark-mode tables */
+
+body.quarto-dark .table {
+  color: #e0e3e6;
+}
+
+
+/* Dark table header */
+
+body.quarto-dark .table thead th {
+  background-color: #303438;
+  color: #f0f1f2;
+
+  border-color: #454a4f;
+}
+
+
+/* Dark table cells */
+
+body.quarto-dark .table > :not(caption) > * > * {
+  border-color: #41464a;
+}
+
+
+/* Dark striped rows */
+
+body.quarto-dark .table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: #292c2f;
+}
+
+
+/* =========================================================
+   24. BLOCKQUOTES
+   ========================================================= */
+
+blockquote {
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  line-height: 1.7;
+
+  padding-left: 1rem;
+
+  border-left: 3px solid;
+}
+
+
+/* Light */
+
+body.quarto-light blockquote {
+  color: #626970;
+  border-left-color: #c7cbd0;
+}
+
+
+/* Dark */
+
+body.quarto-dark blockquote {
+  color: #b6bdc3;
+  border-left-color: #555b61;
+}
+
+
+/* =========================================================
+   25. LISTS
+   ========================================================= */
+
+.paratext ul,
+.paratext ol {
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   26. HORIZONTAL RULE
    ========================================================= */
 
 hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
+
+  border: 0;
+  border-top: 1px solid;
+}
+
+
+/* Light */
+
+body.quarto-light hr {
+  border-top-color: #dfe2e5;
+}
+
+
+/* Dark */
+
+body.quarto-dark hr {
+  border-top-color: #3a3e42;
 }
 
 
 /* =========================================================
-   CODE
+   27. INLINE CODE
    ========================================================= */
 
 code {
-  border-radius: 3px;
+  border-radius: 4px;
+}
+
+
+/* Light */
+
+body.quarto-light code {
+  background-color: #f0f1f2;
+  color: #454a4f;
+}
+
+
+/* Dark */
+
+body.quarto-dark code {
+  background-color: #303438;
+  color: #dce0e4;
 }
 
 
 /* =========================================================
-   DARK MODE
-   ---------------------------------------------------------
-   Main page follows Quarto's dark theme.
-   Sidebar remains fixed grey.
+   28. CODE BLOCKS
    ========================================================= */
 
-[data-bs-theme="dark"] #quarto-sidebar {
-  background-color: #d3d3d3;
+body.quarto-light pre {
+  border: 1px solid #dfe2e5;
+  border-radius: 5px;
 }
 
 
-/* Sidebar text in dark mode */
-
-[data-bs-theme="dark"] #quarto-sidebar a {
-  color: #222222;
+body.quarto-dark pre {
+  border: 1px solid #3d4247;
+  border-radius: 5px;
 }
 
 
-/* Sidebar tools/icons in dark mode */
+/* =========================================================
+   29. DARK MODE DOCUMENT
+   ---------------------------------------------------------
+   A slightly different shade from the navigation area
+   creates depth without looking like separate boxes.
+   ========================================================= */
 
-[data-bs-theme="dark"] #quarto-sidebar .sidebar-tools-main i {
-  color: #222222;
+body.quarto-dark {
+  background-color: #202224;
 }
 
 
-/* Active sidebar item */
-
-[data-bs-theme="dark"] .sidebar-item-container:has(a.active) {
-  background-color: #707070;
+body.quarto-dark #quarto-document-content {
+  color: #e3e5e7;
 }
 
 
-/* Active sidebar text */
+/* =========================================================
+   30. DARK MODE RIGHT-HAND TOC
+   ---------------------------------------------------------
+   Keep Quarto's typography, but make the accent subtle.
+   ========================================================= */
 
-[data-bs-theme="dark"] .sidebar-item-container a.active .chapter-number,
-[data-bs-theme="dark"] .sidebar-item-container a.active .chapter-title,
-[data-bs-theme="dark"] .sidebar-item-container a.active .menu-text {
+body.quarto-dark #quarto-margin-sidebar {
+  color: #c1c6ca;
+}
+
+
+body.quarto-dark #quarto-margin-sidebar a {
+  color: #d4d8dc;
+}
+
+
+body.quarto-dark #quarto-margin-sidebar a:hover {
   color: #ffffff;
 }
 
 
-/* Sidebar hover underline */
-
-[data-bs-theme="dark"] .sidebar-item-container a::after {
-  background: #555555;
-}
-
-
 /* =========================================================
-   DARK MODE LINKS
-   ---------------------------------------------------------
-   Slightly brighter blue so links remain readable against
-   the dark page background.
+   31. DARK MODE SEARCH / DROPDOWNS
    ========================================================= */
 
-[data-bs-theme="dark"] a {
-  color: #8ab4f8;
-}
-
-[data-bs-theme="dark"] a:hover {
-  color: #b3ccf5;
+body.quarto-dark .dropdown-menu {
+  background-color: #2b2f32;
+  border-color: #42474c;
 }
 
 
-/* Citation links */
-
-[data-bs-theme="dark"] .citation a {
-  color: #8ab4f8;
-}
-
-[data-bs-theme="dark"] .citation a:hover {
-  color: #b3ccf5;
-}
-
-[data-bs-theme="dark"] .citation a::after {
-  background: #8ab4f8;
+body.quarto-dark .dropdown-item {
+  color: #dce0e4;
 }
 
 
-/* Figure / table cross-references */
-
-[data-bs-theme="dark"] .quarto-xref {
-  color: #8ab4f8;
-}
-
-[data-bs-theme="dark"] .quarto-xref:hover {
-  color: #b3ccf5;
+body.quarto-dark .dropdown-item:hover {
+  background-color: #383d42;
+  color: #ffffff;
 }
 
 
 /* =========================================================
-   TABLET
+   32. FOOTER
+   ========================================================= */
+
+body.quarto-light #quarto-footer {
+  color: #737a81;
+  border-top: 1px solid #dfe2e5;
+}
+
+
+body.quarto-dark #quarto-footer {
+  color: #92999f;
+  border-top: 1px solid #3a3e42;
+}
+
+
+/* =========================================================
+   33. TABLET
    ========================================================= */
 
 @media (max-width: 992px) {
@@ -494,7 +879,7 @@ code {
 
 
 /* =========================================================
-   MOBILE
+   34. MOBILE
    ========================================================= */
 
 @media (max-width: 768px) {
@@ -521,7 +906,7 @@ code {
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   35. VERY SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {

@@ -2,8 +2,53 @@
 # title: "About"
 ---
 
-# 6.2 Market Segment: Property type
+<!-- # 6.2 Market Segment: Property type -->
+# 6.2 Market Segment: Property Type {#sec-result-property-type}
 
-```{r}
-1 + 1
-```
+This chapter will explore the relationship between energy efficiency and property prices across different property types. Unlike prior studies focusing solely on detached houses, our analysis encompasses detached houses, row houses, duplexes, and apartments. We estimate a model specification equivalent to @eq-final-regression for all the subgroups. Model 2 estimates are for detached houses, Model 3 for row houses, Model 4 for duplexes, and Model 5 for apartments. The results are presented in @tbl-market-segment-property-type.
+
+The results show that most EPC labels have the expected signs and are significant at the 1% level, with some exceptions in Models 2 and 3, i.e. for duplexes and apartments. For apartments, we find that label C is statistically insignificant. In Model 4, labels A2010, B, C and E are found to be insignificant, whereas labels A2020 and G are significant at the 5% level, and labels A2015 and F are significant at the 10% level. Additionally, the results for the duplex sample show far less significance in all variables accounted for compared to other property types. These inconsistencies in Model 4 may be due to the significantly smaller sample size (8,236 observations), which could affect the reliability of the results. Consequently, this chapter focuses mainly on detached houses, apartments, and row houses.
+
+The impact of EPC labels on property prices varies significantly across property types. Detached houses exhibit the highest price premiums for energy-efficient labels. Compared to label D, home buyers of detached houses are willing to pay a premium of 15.2%, 16.6%, 9.9%, and 8.7% more for labels A2020, A2015, A2010, and B, respectively.
+
+Interestingly, for apartments, the price premiums for energy-efficient labels are much lower. The estimated premiums are equivalent for labels A2020, A2015, and B, measured at 3.7%, whereas for label A2010, the price premium is 5.4%. Row houses show label effects that are relatively consistent compared to the full sample estimates to some degree.
+
+A notable trend is the diminishing returns on energy efficiency labels across the property type segment. The price premium diminishes for detached houses and row houses once the most energy-efficient label is achieved. Similarly, for apartments, the price premium decreases for labels A2015 and A2020, where the premium is nearly equivalent to that of the B label, with only marginal differences. This pattern indicates that as buildings get more energy-efficient, the additional advantages acquired by home buyers tend to diminish. Moving from a D to an A classification delivers significant utility gains; however, upgrades within the A category may result in declining returns. In other words, if a property reaches a specific efficiency level, future renovations may not considerably improve its appeal, or the increased efficiency may not convert into a corresponding rise in perceived value.
+
+## Energy Sources and Systems
+
+The price impact from different heating sources and systems varies across property types. Our results indicate that district heating is the primary heat source, which home buyers prefer when investing in detached houses or apartments. For detached houses, there is only one heating source that trumps district heating: wood pellets, which give a premium of 3.5% compared to district heating. For apartments, the preference for district heating is less pronounced. Apartments with district heating and electricity are sold at a 2% premium, those with only electricity at a 7.1% premium, and those with electricity and wood pellets at a 39.2% premium. The price premium for apartments heated with both electricity and wood pellets seems unusually high, indicating potential missing information in our analysis.
+
+Moreover, detached houses and apartments that are using fossil fuels as the main energy source are found to be sold on average at a lower price compared to those with district heating. Specifically, detached houses and apartments that are solely dependent on natural gas as heating source are sold at a price discount of 7.8% and 3.7%, respectively. Properties with oil as the primary heat source are sold with price discounts of 14.3% for detached houses, 6.6% for duplexes and 5.1% for apartments.
+
+Interestingly, our results indicate that the apartment market is the only property market that acknowledges a value in heat pumps, whereas the effect of the presence of heat pumps in other property types is statistically insignificant. We find that apartments are sold on average at a higher price of 1.1% if they come with a heat pump.
+
+For solar heating and solar cells, we find that the presence of these heating systems is only valued for detached houses and apartments. A detached house is sold on average at a 1.4% higher price if it has solar cells, whereas apartments are sold on average at a 2.4% higher price. If the solar heating system is present in a detached house, we find that the house is sold on average at a 0.6% higher price, and for apartments, the premium is 1.1%. Although we find price premiums for these components, our results indicate that their importance is somewhat lower than that of the heating source in both detached houses and apartments.
+
+## Renovation Characteristics
+
+Finally, the effect of energy-efficiency potential on property prices differs across property types. In terms of energy label potential from implementing all renovation suggestions, we find only a significant price impact for detached houses and partially for apartments. Similar to our full sample Model, having the ability to go up by one or two EPC labels has a positive effect on prices for detached houses, but once a property reaches the potential to go up by three or more EPC labels, the effect becomes negative, leading to lower property prices.
+
+We only find that a one-letter or three-letter increase has a significant price effect for apartments. Surprisingly, the results indicate that apartments with a one-letter improvement potential have a negative effect on prices, whereas the potential to move up by three labels has a positive effect on apartment prices. One might have expected that the price effect from the potential of a one-letter increase would either be insignificant or marginal. The negative price effect may arise because potential buyers do not perceive a single-letter improvement as enough benefits to justify the potential costs associated with it, whereas a three-letter improvement could signify a more substantial and worthwhile upgrade.
+
+Moreover, we find similar anomalies in terms of total investment cost and total energy cost across property types. Again, the variables are only effective for detached houses and apartments. Interestingly, while increased estimated investment costs for profitable renovations have a negative impact on detached house prices, higher potential total energy savings yield a positive effect. This pattern aligns with economic theory, where perceived increases in energy savings costs are positively correlated, while increased investment costs have a negative impact.
+
+However, unlike the effect found in the full sample, the effect from total energy costs saved for detached houses is significant at the 10% level. Conversely, this trend is flipped for apartments, where higher expected investment expenditures for profitable renovations have a positive impact on unit pricing, while potential total energy cost savings show a negative effect.
+
+This result does strike as a relatively odd one, yet it's worth noting that the estimated investment cost for profitable renovations and total cost saved from all renovations are at the building level. Unlike detached houses, the estimated energy cost saved and investment cost for profitable renovations for apartments are for the whole apartment block.
+
+Therefore, the cost and benefits are shared across the entire building. This collective arrangement may influence how these benefits are perceived. Overall, regardless of property type—detached house or apartment—the impacts of investment and energy cost benefits are relatively inelastic. However, the implications for property prices resulting from renovation potential in these segments necessitate further investigation.
+
+## Apartments versus Detached Houses
+
+Overall, we find significant differences between property types, particularly between apartments and detached houses. The major differences in the effects between these two can be explained by several factors.
+
+Renovations in detached houses are funded solely by the household, which often relies on one or two household incomes. Therefore, this might be the reason why the detached housing market values both current state of the property in terms of energy efficiency and its potential energy efficiency higher than apartments, as all renovation costs and energy consumption bear a higher weight on the wallet than for those investing in apartments.
+
+Moreover, detached houses are far more diverse in structure and size, whereas apartments are fairly homogeneous. In contrast to this, apartments, by their nature, often share walls and infrastructure, which limits the extent to which individual units can implement energy-saving technologies independently. Meanwhile, the flexibility of energy efficiency improvements is typically more apparent in detached houses.
+
+Furthermore, energy costs and efficiency are aggregated at the building level for apartments. While any improvements in the building infrastructure can benefit all residents, individual unit owners may not directly perceive or control these benefits. This collective assessment can lead to a perception that personal investments in energy-efficient apartments, as indicated by its EPC label, may not yield a proportional financial return compared to detached houses. Leading to the effect of EPC labels being significantly less than the EPC label effect found for detached houses. Overall, the result appears to indicate that energy efficiency indicators and renovation potential toward energy efficiency differ across different property types. Nevertheless, these results must further be corroborated to ensure that the effects are actually significantly different from each other. 
+
+
+
+<!-- ADD REGRESSION TABLE HERE  -->

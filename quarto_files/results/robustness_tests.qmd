@@ -4,6 +4,58 @@
 
 # 6.4 Robustness Tests
 
-```{r}
-1 + 1
-```
+# 6.4 Robustness Tests {#sec-result-robustness-tests}
+
+In this chapter, we assess the robustness of the main results and address potential limitations of the analysis. To do so, we conduct several alterations to the model specification and its variables. These modifications aim to evaluate the stability and reliability of our final specification, as detailed in @eq-final-regression. The results are presented in @tbl-regression-robust-testing, with Model 1 representing the main specification of @eq-final-regression, corresponding to Model 6 in @tbl-main-results.
+
+## Outliers and Potential Data Errors
+
+In Models 2 to 4, we alter the control and dependent variables by removing potential outliers and data errors to assess the robustness of our main results. In Model 2, we remove observations with sales prices greater than DKK 10 million (EUR 1.3 million). In Model 3, we exclude observations where the price per square metre is less than DKK \[XX\] (EUR 39) or greater than DKK 95,000 (EUR 12,350).
+
+In Model 4, we remove observations based on selected control variables. Specifically, we exclude properties where the energy source is unknown, properties with more than four bathrooms or no bathroom, properties with more than four toilets, and properties with more than seven rooms or no rooms. In Model 5, we combine all the criteria from Models 2 to 4.
+
+Across Models 2 to 5, the key variables do not appear to change substantially in terms of their signs or statistical significance. However, similar to the results found for the property-type segment, Model 5 shows that, on average, the most energy-efficient EPC label, A2020, does not appear to outperform label A2015 in terms of its price premium. This result provides further evidence of a potential non-linear relationship between energy efficiency and property prices. While energy-efficient properties are generally valued more highly than less energy-efficient properties, there appears to be a threshold beyond which additional improvements in energy efficiency do not translate into additional property value.
+
+Regarding model fit, Model 5 produces a within $R^2$ of up to 0.527, compared with 0.442 in our main specification (Model 6 in @tbl-main-results). This indicates that Model 5 explains 52.7% of the variation in property prices within the fixed-effects clusters.
+
+## Energy Consumption
+
+Furthermore, we utilise the energy consumption of dwellings as an alternative measure of energy efficiency. In this specification, $EE_i$ in @eq-final-regression represents the natural logarithm of the estimated annual energy consumption of dwelling $i$, measured in kWh.
+
+The purpose of using energy consumption is to assess whether the findings are consistent with those obtained using EPC labels. If a price premium is found for energy-efficient labels, where estimated energy consumption is an important determinant of these labels, one would expect energy consumption to produce similar results. Specifically, higher energy consumption should be associated with larger price discounts.
+
+However, if this is not the case, one possible explanation is that the signalling effect of EPC labels is more important to consumers than the underlying estimated energy consumption. Consumers may not necessarily expect their actual energy consumption to correspond to the amount reported in the EPC report. This argument is consistent with the findings of @wahlstrom_doing_2016.
+
+For this interpretation to hold, however, we must assume that the EPC labels are genuinely capturing a signalling effect rather than incorporating other potential effects, such as omitted variables or measurement errors. Alternatively, differences between the effects of EPC labels and energy consumption could indicate potential bias or measurement error in our regression.
+
+The results are presented in Model 6 and support the findings from the main analysis. Energy consumption has a negative and statistically significant effect on property prices at the 1% level. Based on the estimated coefficient, a 1% increase in energy consumption is associated with a 9.7% decrease in property prices. This result indicates that property prices are relatively elastic with respect to estimated energy consumption.
+
+It is worth noting that, due to limitations in the data extraction process from the EPC reports, we were unable to extract estimated energy consumption for all properties. This is due both to data errors and to the fact that many EPC reports do not provide an estimate of energy consumption. Consequently, the sample used when analysing energy consumption contains 582,690 observations, which is approximately 20% smaller than the full sample used in the main analysis.
+
+## Time on the Market
+
+Next, we address potential bias related to the relationship between price and demand by using time on the market as a proxy for demand. This approach addresses the possibility that lower transaction prices may be associated with longer selling periods due to lower demand.
+
+By analysing how quickly energy-efficient properties sell in addition to their transaction prices, we can assess whether the observed effects of energy efficiency are also reflected in market liquidity and are therefore not solely driven by price mechanisms.
+
+The results are presented in Model 7 and further complement the main findings, as well as the previous evidence regarding a potential non-linear relationship between energy efficiency and property prices. Using time on the market as an alternative outcome measure, we find that A2010 properties sell the fastest, followed by A2020 and A2015 properties. This pattern reinforces the observed non-linear relationship between energy efficiency and property prices.
+
+Model 7 shows that properties labelled A2020, A2015, and A2010 are sold, on average, 31, 24, and 34 days faster than D-labelled properties, respectively. Properties labelled B and C are sold, on average, 18 and 16 days faster than D-labelled properties. Conversely, properties labelled E, F, and G, which are less energy-efficient, take, on average, 13, 22, and 26 days longer to sell than D-labelled properties.
+
+Additionally, these results are consistent with insights provided by real estate agents, as discussed in @sec-epbd-danish-epc-scheme.
+
+## Robustness of Text Classification
+
+Finally, we assess the robustness of the observed price premiums associated with solar heating, solar cells, and heat pumps, as reported in the main results (Model 6 in @tbl-main-results). We do this by estimating multiple models based on @eq-final-regression while continuously increasing the probability threshold used to classify the three variables.
+
+The findings are presented in @tbl-robust-test-text-classification. As before, Model 1 represents the main specification, using an 85% probability threshold for all three variables. For Models 2 through 7, the probability thresholds are increased to 90%, 95%, 96%, 97%, 98%, and 99%, respectively.
+
+For solar heating and solar cells, the coefficients are relatively stable, with only minor changes, and remain statistically significant at the 1% level across all specifications.
+
+Interestingly, as the probability threshold for solar cells increases, the estimated price premium also increases, ranging from 3.35% to 4.48%. In contrast, the price premium associated with solar heating decreases as the probability threshold increases, ranging from 1.0% to 1.9%.
+
+For heat pumps, the statistical significance changes from the 1% level in Model 1 to the 5% level for probability thresholds between 95% and 97%, before returning to the 1% level at the 98% and 99% thresholds. However, the estimated coefficient for heat pumps changes only marginally, ranging from 0.40% to 0.72%.
+
+Moreover, the coefficients of the other key variables and control variables do not appear to change substantially as the probability threshold increases. It is worth noting that although increasing the probability threshold improves the precision of the classification by reducing the number of false-positive observations, this comes at the potential cost of increasing the number of false-negative observations.
+
+Nevertheless, regardless of the probability threshold applied, all three components have a positive estimated effect on property prices. However, the relatively small and less stable coefficient for heat pumps suggests that home buyers may place less value on heat pumps compared with solar cells and solar heating.

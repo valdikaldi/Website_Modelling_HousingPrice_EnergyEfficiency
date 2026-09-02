@@ -26,42 +26,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -83,9 +67,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-4ccc864125b7019c09884ed702a3cb0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-e455b10e56951f8aaa9f156cfb3eda78.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-4ccc864125b7019c09884ed702a3cb0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3645173cc427a5560271085d35093e07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-cd16ba0a1f8b94f3b7224e9ec2dc0103.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3645173cc427a5560271085d35093e07.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -114,6 +98,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <link rel="icon" type="image/png" href="assets/cover.jpg">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../main_styles.css">
 </head>
@@ -308,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/results/main_result.html">5. Empirical Strategy</a></li><li class="breadcrumb-item"><a href="../../quarto_files/results/robustness_tests.html"><span class="chapter-title">6.4 Robustness Tests</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/results/main_result.html">6. Results</a></li><li class="breadcrumb-item"><a href="../../quarto_files/results/robustness_tests.html"><span class="chapter-title">6.4 Robustness Tests</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -410,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">5. Empirical Strategy</span></a>
+ <span class="menu-text">6. Results</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -423,12 +436,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quarto_files/results/market_segment_property_type.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.2 Market Segment: Property type</span></a>
+  <a href="../../quarto_files/results/market_segment_property_type.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.2 Market Segment: Property Type</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quarto_files/results/policy_effect.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.3 Policy effect</span></a>
+  <a href="../../quarto_files/results/policy_effect.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.3 Policy Effect</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -459,14 +472,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-result-robustness-tests" id="toc-sec-result-robustness-tests" class="nav-link active" data-scroll-target="#sec-result-robustness-tests">6.4 Robustness Tests</a>
+  <ul class="collapse">
+  <li><a href="#outliers-and-potential-data-errors" id="toc-outliers-and-potential-data-errors" class="nav-link" data-scroll-target="#outliers-and-potential-data-errors">Outliers and Potential Data Errors</a></li>
+  <li><a href="#energy-consumption" id="toc-energy-consumption" class="nav-link" data-scroll-target="#energy-consumption">Energy Consumption</a></li>
+  <li><a href="#time-on-the-market" id="toc-time-on-the-market" class="nav-link" data-scroll-target="#time-on-the-market">Time on the Market</a></li>
+  <li><a href="#robustness-of-text-classification" id="toc-robustness-of-text-classification" class="nav-link" data-scroll-target="#robustness-of-text-classification">Robustness of Text Classification</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/results/main_result.html">5. Empirical Strategy</a></li><li class="breadcrumb-item"><a href="../../quarto_files/results/robustness_tests.html"><span class="chapter-title">6.4 Robustness Tests</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/results/main_result.html">6. Results</a></li><li class="breadcrumb-item"><a href="../../quarto_files/results/robustness_tests.html"><span class="chapter-title">6.4 Robustness Tests</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">6.4 Robustness Tests</h1>
 </div>
@@ -485,17 +510,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<section id="sec-result-robustness-tests" class="level1">
+<h1>6.4 Robustness Tests</h1>
+<p>In this chapter, we assess the robustness of the main results and address potential limitations of the analysis. To do so, we conduct several alterations to the model specification and its variables. These modifications aim to evaluate the stability and reliability of our final specification, as detailed in <span class="quarto-unresolved-ref">?eq-final-regression</span>. The results are presented in <span class="quarto-unresolved-ref">?tbl-regression-robust-testing</span>, with Model 1 representing the main specification of <span class="quarto-unresolved-ref">?eq-final-regression</span>, corresponding to Model 6 in <span class="quarto-unresolved-ref">?tbl-main-results</span>.</p>
+<section id="outliers-and-potential-data-errors" class="level2">
+<h2 class="anchored" data-anchor-id="outliers-and-potential-data-errors">Outliers and Potential Data Errors</h2>
+<p>In Models 2 to 4, we alter the control and dependent variables by removing potential outliers and data errors to assess the robustness of our main results. In Model 2, we remove observations with sales prices greater than DKK 10 million (EUR 1.3 million). In Model 3, we exclude observations where the price per square metre is less than DKK [XX] (EUR 39) or greater than DKK 95,000 (EUR 12,350).</p>
+<p>In Model 4, we remove observations based on selected control variables. Specifically, we exclude properties where the energy source is unknown, properties with more than four bathrooms or no bathroom, properties with more than four toilets, and properties with more than seven rooms or no rooms. In Model 5, we combine all the criteria from Models 2 to 4.</p>
+<p>Across Models 2 to 5, the key variables do not appear to change substantially in terms of their signs or statistical significance. However, similar to the results found for the property-type segment, Model 5 shows that, on average, the most energy-efficient EPC label, A2020, does not appear to outperform label A2015 in terms of its price premium. This result provides further evidence of a potential non-linear relationship between energy efficiency and property prices. While energy-efficient properties are generally valued more highly than less energy-efficient properties, there appears to be a threshold beyond which additional improvements in energy efficiency do not translate into additional property value.</p>
+<p>Regarding model fit, Model 5 produces a within <span class="math inline">\(R^2\)</span> of up to 0.527, compared with 0.442 in our main specification (Model 6 in <span class="quarto-unresolved-ref">?tbl-main-results</span>). This indicates that Model 5 explains 52.7% of the variation in property prices within the fixed-effects clusters.</p>
+</section>
+<section id="energy-consumption" class="level2">
+<h2 class="anchored" data-anchor-id="energy-consumption">Energy Consumption</h2>
+<p>Furthermore, we utilise the energy consumption of dwellings as an alternative measure of energy efficiency. In this specification, <span class="math inline">\(EE_i\)</span> in <span class="quarto-unresolved-ref">?eq-final-regression</span> represents the natural logarithm of the estimated annual energy consumption of dwelling <span class="math inline">\(i\)</span>, measured in kWh.</p>
+<p>The purpose of using energy consumption is to assess whether the findings are consistent with those obtained using EPC labels. If a price premium is found for energy-efficient labels, where estimated energy consumption is an important determinant of these labels, one would expect energy consumption to produce similar results. Specifically, higher energy consumption should be associated with larger price discounts.</p>
+<p>However, if this is not the case, one possible explanation is that the signalling effect of EPC labels is more important to consumers than the underlying estimated energy consumption. Consumers may not necessarily expect their actual energy consumption to correspond to the amount reported in the EPC report. This argument is consistent with the findings of <span class="citation" data-cites="wahlstrom_doing_2016">Wahlström (<a href="../references.html#ref-wahlstrom_doing_2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>For this interpretation to hold, however, we must assume that the EPC labels are genuinely capturing a signalling effect rather than incorporating other potential effects, such as omitted variables or measurement errors. Alternatively, differences between the effects of EPC labels and energy consumption could indicate potential bias or measurement error in our regression.</p>
+<p>The results are presented in Model 6 and support the findings from the main analysis. Energy consumption has a negative and statistically significant effect on property prices at the 1% level. Based on the estimated coefficient, a 1% increase in energy consumption is associated with a 9.7% decrease in property prices. This result indicates that property prices are relatively elastic with respect to estimated energy consumption.</p>
+<p>It is worth noting that, due to limitations in the data extraction process from the EPC reports, we were unable to extract estimated energy consumption for all properties. This is due both to data errors and to the fact that many EPC reports do not provide an estimate of energy consumption. Consequently, the sample used when analysing energy consumption contains 582,690 observations, which is approximately 20% smaller than the full sample used in the main analysis.</p>
+</section>
+<section id="time-on-the-market" class="level2">
+<h2 class="anchored" data-anchor-id="time-on-the-market">Time on the Market</h2>
+<p>Next, we address potential bias related to the relationship between price and demand by using time on the market as a proxy for demand. This approach addresses the possibility that lower transaction prices may be associated with longer selling periods due to lower demand.</p>
+<p>By analysing how quickly energy-efficient properties sell in addition to their transaction prices, we can assess whether the observed effects of energy efficiency are also reflected in market liquidity and are therefore not solely driven by price mechanisms.</p>
+<p>The results are presented in Model 7 and further complement the main findings, as well as the previous evidence regarding a potential non-linear relationship between energy efficiency and property prices. Using time on the market as an alternative outcome measure, we find that A2010 properties sell the fastest, followed by A2020 and A2015 properties. This pattern reinforces the observed non-linear relationship between energy efficiency and property prices.</p>
+<p>Model 7 shows that properties labelled A2020, A2015, and A2010 are sold, on average, 31, 24, and 34 days faster than D-labelled properties, respectively. Properties labelled B and C are sold, on average, 18 and 16 days faster than D-labelled properties. Conversely, properties labelled E, F, and G, which are less energy-efficient, take, on average, 13, 22, and 26 days longer to sell than D-labelled properties.</p>
+<p>Additionally, these results are consistent with insights provided by real estate agents, as discussed in <span class="quarto-unresolved-ref">?sec-epbd-danish-epc-scheme</span>.</p>
+</section>
+<section id="robustness-of-text-classification" class="level2">
+<h2 class="anchored" data-anchor-id="robustness-of-text-classification">Robustness of Text Classification</h2>
+<p>Finally, we assess the robustness of the observed price premiums associated with solar heating, solar cells, and heat pumps, as reported in the main results (Model 6 in <span class="quarto-unresolved-ref">?tbl-main-results</span>). We do this by estimating multiple models based on <span class="quarto-unresolved-ref">?eq-final-regression</span> while continuously increasing the probability threshold used to classify the three variables.</p>
+<p>The findings are presented in <span class="quarto-unresolved-ref">?tbl-robust-test-text-classification</span>. As before, Model 1 represents the main specification, using an 85% probability threshold for all three variables. For Models 2 through 7, the probability thresholds are increased to 90%, 95%, 96%, 97%, 98%, and 99%, respectively.</p>
+<p>For solar heating and solar cells, the coefficients are relatively stable, with only minor changes, and remain statistically significant at the 1% level across all specifications.</p>
+<p>Interestingly, as the probability threshold for solar cells increases, the estimated price premium also increases, ranging from 3.35% to 4.48%. In contrast, the price premium associated with solar heating decreases as the probability threshold increases, ranging from 1.0% to 1.9%.</p>
+<p>For heat pumps, the statistical significance changes from the 1% level in Model 1 to the 5% level for probability thresholds between 95% and 97%, before returning to the 1% level at the 98% and 99% thresholds. However, the estimated coefficient for heat pumps changes only marginally, ranging from 0.40% to 0.72%.</p>
+<p>Moreover, the coefficients of the other key variables and control variables do not appear to change substantially as the probability threshold increases. It is worth noting that although increasing the probability threshold improves the precision of the classification by reducing the number of false-positive observations, this comes at the potential cost of increasing the number of false-negative observations.</p>
+<p>Nevertheless, regardless of the probability threshold applied, all three components have a positive estimated effect on property prices. However, the relatively small and less stable coefficient for heat pumps suggests that home buyers may place less value on heat pumps compared with solar cells and solar heating.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-wahlstrom_doing_2016" class="csl-entry" role="listitem">
+Wahlström, Marie H. 2016. <span>“Doing Good but Not That Well? <span>A</span> Dilemma for Energy Conserving Homeowners.”</span> <em>Energy Economics</em> 60 (November): 197–205. <a href="https://doi.org/10.1016/j.eneco.2016.09.025">https://doi.org/10.1016/j.eneco.2016.09.025</a>.
+</div>
+</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -913,8 +972,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../quarto_files/results/policy_effect.html" class="pagination-link" aria-label="6.3 Policy effect">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">6.3 Policy effect</span></span>
+      <a href="../../quarto_files/results/policy_effect.html" class="pagination-link" aria-label="6.3 Policy Effect">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">6.3 Policy Effect</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

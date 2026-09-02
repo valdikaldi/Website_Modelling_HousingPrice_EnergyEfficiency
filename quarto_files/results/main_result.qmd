@@ -4,6 +4,72 @@
 
 # 6.1 Main results
 
-```{r}
-1 + 1
-```
+The key results of the analysis are summarised in @tbl-main-results. Models 1 to 4 estimate @eq-baseline-model, incorporating additional control variables and fixed effects, until reaching the complete specification of @eq-final-regression in Model 6. The EPC labels are all highly significant at the 0.01% level for all models.
+
+Model 1 has a parsimonious specification. The model includes only EPC labels and basic property characteristics to establish a baseline understanding.
+
+As highlighted in @sec-data, there is a noticeable relationship between energy-efficient labels and the year of construction. While newer properties generally exhibit better energy efficiency due to updated building standards, relying solely on construction years may not fully capture all aspects of energy efficiency, given potential changes over a building's life cycle until its sale. Therefore, additional factors are added in Model 2, such as energy-related attributes, roof and wall material of the property, along with the timing of significant property renovations categorised over periodic intervals.
+
+Moreover, one might argue that the number of rooms is insufficient, as it leaves out important quality details, such as the presence of a garage, conservatory, pool, etc. Therefore, in Model 3, we add additional structural features, such as whether the property has a detached or built-in garage, outhouse or carport, as well as a swimming pool. Finally, fine-grained geographical characteristics of property surroundings are added in Model 4 to further control for micro factors.
+
+Excluding Model 2, the relationship between EPC labels and property prices strengthens as more property characteristics and external features are considered, showing an upward trend. With label D as the reference category, Model 4, the main specification for @eq-baseline-model, reveals that properties with A2020, A2015, and A2010 labels command average price premiums of 18.6%, 16.4%, and 11.3%, respectively, compared to properties with a D label. Additionally, properties labelled B and C transact at average premiums of 7.6% and 4.7%, respectively. In contrast, properties with less energy-efficient labels E, F, and G are sold at price discounts of 7.9%, 15.8%, and 36.5%, respectively.
+
+From Model 4, we obtain an $R^2$ of 0.6485, indicating that the model can explain 64.85% of the variance in property prices, reflecting a strong overall fit. However, we obtain a within $R^2$ of 0.382, which shows that we capture 38.2% of the variation in property prices within the fixed-effects clusters. The low within $R^2$ suggests significant residual variation within these groups, implying that while the fixed effects account for some local and temporal factors, unobserved influences remain.
+
+The price premiums found in Model 4 for labels A2020, A2015, and A2010, as well as the price discounts for labels F and G, are significantly higher than the label effects reported by @jensen_market_2016 and @naess-schmidt_homes_2015. This discrepancy can be attributed to several factors: our study incorporates more comprehensive control variables, treats the three A-labels as individual groups rather than a single group, spans a much longer time period, and includes a significantly larger sample size.
+
+As noted in @sec-literature-review, few studies have explored additional features from EPC reports, such as renovation suggestions and energy-efficiency potential. Considering economic rationale, one might assume that home buyers evaluate properties not only by their current energy efficiency but also by their potential for future enhancements as a long-term investment.
+
+Therefore, Models 5 and 6 incorporate additional characteristics taken from the EPC reports, as detailed in @sec-empirical-strategy, to assess the potential for improving property energy efficiency through renovations suggested in the reports.
+
+Furthermore, leveraging our unique dataset enables comprehensive coverage across the entire country. However, given the nationwide sample, it is imperative to recognise the potential market dynamics over time within specific areas. Therefore, Model 6 introduces an interaction fixed effect between time and 4-digit postal code fixed effects.
+
+## Model 6
+
+### EPC labels
+
+With the added renovation characteristics, we see a significant drop in the label effect, particularly for energy-efficient labels. From our final model, Model 6, we find that once renovation potential indicators are accounted for, the price premiums for energy-efficient labels A2020, A2015, and A2010, compared to label D, are measured at 7.7%, 6.4%, and 2.6%, respectively. Additionally, labels B and C are sold on average at 2.2% and 2.0% higher prices than a D-labelled property, respectively, whereas properties with labels E, F, and G are sold for average discounts of 6.2%, 12.5%, and 28.7%, respectively.
+
+### Energy sources and systems
+
+Aside from the energy-efficiency labels, we find that consumers are concerned about the energy source and systems. Properties with natural gas, oil, or a mix of electricity and oil are sold at average discounts of 2.6%, 10.6%, and 12.9%, respectively, compared to properties relying solely on district heating as a heat source.
+
+Conversely, properties with only electricity or a mix of electricity and district heating as heat sources are sold at average premiums of 1.9% and 5.4%, respectively, compared to properties relying only on district heating.
+
+Furthermore, we find that properties with solar heating, solar cells, or heat pumps installed are sold, on average, with price premiums of 1.9%, 3.3%, and 0.7%, respectively, compared to properties without these systems. However, the effect from heat pumps is relatively unstable across Models 3 to 6, indicating that the effect may not be robust. In the chapter on robustness testing, we will investigate this further.
+
+### Renovation variables
+
+In contrast to the energy sources and systems, we find that consumers pay significant attention not only to the present condition and characteristics of the property but also to the future potential in terms of the property's energy efficiency.
+
+In Model 6, the effect of the potential energy label that a property can achieve by implementing all renovation suggestions stated in the EPC reports shows a clear non-linear relationship.
+
+In comparison to properties without potential energy labels stated in the reports, we find that the effect of a one-letter increase in the potential energy label, resulting from implementing all stated renovation suggestions, has a fairly marginal price premium of only 0.4%.
+
+However, as the potential energy label gets higher, the higher the positive effect on property prices. As soon as we reach a four-letter increase, the effect starts to diminish and becomes negative once we reach a six-letter increase or greater. This might indicate that while home buyers appreciate energy-efficiency potential, there comes a point where further increases in energy-label rating potential might not justify higher property value. Instead, a significantly higher rating potential may signal a greater need for renovations, leading to a negative impact.
+
+Furthermore, in Models 5 and 6, the impact of the total energy cost saved from implementing all renovation suggestions and the estimated investment cost from implementing profitable renovations are both negative and highly significant. One might have expected the signalling effect of potential energy savings to yield a positive impact. However, the effect of both variables on property prices is considerably modest and inelastic, suggesting that potential home buyers may not prioritise the estimated energy cost savings or the expenses associated with recommended renovations.
+
+On the other hand, with regard to the types of renovations recommended in the reports, we observe that several categories have significant effects on property prices. For instance, properties with proposed upgrades to district heating sell for an average 7.8% higher price than those that do not. District heating relies on existing infrastructure, which then only requires adjusting the heating system, making this option highly valued by home buyers.
+
+Moreover, properties that have renovation suggestions related to windows or doors are sold at an average discount of 5.3% compared with those with no window or door renovation suggestions.
+
+Additionally, while home buyers generally perceive heat pumps to add value to a property, the requirement to install them for higher energy efficiency negatively impacts property prices. This could be due to significant upfront expenses, including equipment and labour costs, which may discourage buyers.
+
+However, it is worth noting that our dummy variable indicating whether a property has installed heat pumps includes all types of heat pumps. In future studies, it may be valuable to distinguish between different types of heat pumps, such as vertical ground-source heat pumps, horizontal ground-source heat pumps, and air-source heat pumps. These types can vary considerably in terms of labour, installation, and equipment costs.
+
+One explanation for why we find that the types of renovations have a significantly higher impact on property prices than the estimated energy-saving cost and investment cost might be that consumers pay more attention to broader renovation characteristics, as the estimated cost benefits and investment expenses are too general.
+
+In addition, both the estimated energy consumption and energy savings may not necessarily reflect home buyers' energy consumption patterns. Therefore, consumers might pay less attention to the given estimates and more to the broader characteristics. This is consistent with the findings of @christensen_energy_2014, who find that the estimated cost benefits and investment expenses in the reports have limited impact on energy-efficient renovations.
+
+## Overall findings
+
+Overall, the results from the table show interesting trends regarding energy efficiency and property prices.
+
+In Models 1 to 4, where we successively add control variables related to property features and neighbourhood characteristics, the price premiums and price discounts increase, excluding Model 2. However, once we introduce renovation-potential features of properties in Model 5, we observe a significantly lower price premium for energy-efficient labels and a price discount for non-energy-efficient labels.
+
+The effect diminishes further when we include the interaction fixed effect between time and 4-digit postal code, emphasising the importance of including comprehensive property characteristics in hedonic pricing models, as the previous impact of EPC labels on property prices was most likely confounded by the underlying renovation potential.
+
+
+
+<!-- ADD REGRESSION TABLE HERE  -->
