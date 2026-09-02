@@ -198,7 +198,9 @@ body.quarto-dark #quarto-sidebar {
    ========================================================= */
 
 .sidebar-logo {
-  border-radius: 50%;
+  /* border-radius: 50%; */
+  border-radius: 50px;
+
 }
 
 
