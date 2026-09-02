@@ -82,5 +82,17 @@
   },
   "quarto_files/appendix.qmd": {
     "appendix.html": "2f8c4cd3"
+  },
+  "quarto_files/results/main_result.qmd": {
+    "main_result.html": "5996300c"
+  },
+  "quarto_files/results/market_segment_property_type.qmd": {
+    "market_segment_property_type.html": "fc5523da"
+  },
+  "quarto_files/results/policy_effect.qmd": {
+    "policy_effect.html": "3ecb90b8"
+  },
+  "quarto_files/results/robustness_tests.qmd": {
+    "robustness_tests.html": "c5c87af3"
   }
 }

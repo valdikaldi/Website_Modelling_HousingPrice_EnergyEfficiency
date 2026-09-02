@@ -1,0 +1,9 @@
+---
+# title: "About"
+---
+
+# 6.1 Main results
+
+```{r}
+1 + 1
+```

@@ -19,3 +19,5 @@ _book/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+/.quarto/
+**/*.quarto_ipynb

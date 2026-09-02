@@ -1,78 +1,255 @@
-/* css styles */
+/* =========================================================
+   QUARTO CUSTOM CSS
+   ========================================================= */
 
-/* Make the navbar thinner */
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
 .navbar {
-  --bs-navbar-padding-y: 0.02rem; /* Vertical padding */
+  --bs-navbar-padding-y: 0.02rem;
 }
 
-/* area with the text */
-/* .content {
-  margin-left: 6rem;
-  margin-right: 8rem;
-} */
-.content {
-  margin-left: 5rem;
-  margin-right: 8rem;
+/* =========================================================
+   QUARTO TOP NAVBAR
+   ========================================================= */
+
+/* Light mode
+body.quarto-light .navbar {
+  background-color: #d3d3d3 !important;
 }
 
-@media (max-width: 768px) {
-  .content {
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
-  }
+/* Dark mode */
+body.quarto-dark .navbar {
+  background-color: #d3d3d3 !important;
 }
 
-/* styling the text - paragraphs*/
-.paratext {
-  text-align: justify;
+
+/* Navbar text - light mode */
+body.quarto-light .navbar a {
+  color: #333333 !important;
 }
-/* ------------------------- quote text i.e. quotation */
-.paratext .paratext_quote {
-  margin: auto;
-  width: 80%;
-  text-align: justify;
+
+/* Navbar text - dark mode */
+body.quarto-dark .navbar a {
+  color: #333333 !important;
 }
+
+
+/* Navbar icons */
+body.quarto-dark .navbar i,
+body.quarto-dark .navbar .bi {
+  color: #333333 !important;
+} 
+
+
+/* =========================================================
+   LEFT SIDEBAR
+   ---------------------------------------------------------
+   The sidebar intentionally remains GREY in both
+   light and dark mode.
+   ========================================================= */
 
 #quarto-sidebar {
-  background-color: whitesmoke;
+  background-color: #d3d3d3;
 }
 
-/* sidebar logo */
+
+/* =========================================================
+   SIDEBAR LOGO
+   ========================================================= */
+
 .sidebar-logo {
   border-radius: 10rem;
 }
 
-/* links under logo -sidebar */
-.sidebar-tools-main i {
-  font-size: 20px; /* Adjust this value to increase the size */
-}
+
+/* =========================================================
+   SIDEBAR TOOLS
+   ========================================================= */
+
 .sidebar-tools-main {
   margin-top: 10px;
 }
 
-/*  style all links "a" elements */
+.sidebar-tools-main i {
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER / SEARCH
+   ========================================================= */
+
+.sidebar-header {
+  padding-right: 0.75rem;
+}
+
+#quarto-search {
+  padding-right: 0.75rem;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU ITEMS
+   ========================================================= */
+
+.sidebar-item-container {
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+   ========================================================= */
+
+.sidebar-item-container a {
+  color: #333333;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+
+/* =========================================================
+   ACTIVE SIDEBAR PAGE
+   ========================================================= */
+
+.sidebar-item-container:has(a.active) {
+  background-color: #808080;
+}
+
+.sidebar-item-container a.active .chapter-number,
+.sidebar-item-container a.active .chapter-title,
+.sidebar-item-container a.active .menu-text {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SIDEBAR HOVER EFFECT
+   ========================================================= */
+
+.sidebar-item-container a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #666666;
+  transition: all 0.25s;
+}
+
+.sidebar-item-container a:hover::after {
+  width: 85%;
+  left: 0;
+}
+
+
+/* =========================================================
+   MAIN QUARTO CONTENT
+   ---------------------------------------------------------
+   Quarto's YAML grid controls the page layout.
+   ========================================================= */
+
+#quarto-content {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   DOCUMENT CONTENT
+   ========================================================= */
+
+#quarto-document-content {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: clamp(0.75rem, 1.5vw, 1.75rem);
+  padding-right: clamp(0.75rem, 1vw, 1.25rem);
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EXISTING .content CLASS
+   ========================================================= */
+
+.content {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RIGHT MARGIN SIDEBAR
+   ---------------------------------------------------------
+   Width remains controlled by Quarto YAML.
+   ========================================================= */
+
+#quarto-margin-sidebar {
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+#quarto-margin-sidebar > * {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   PARAGRAPH TEXT
+   ========================================================= */
+
+.paratext {
+  width: 100%;
+  text-align: justify;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   QUOTATION TEXT
+   ========================================================= */
+
+.paratext .paratext_quote {
+  width: min(80%, 75ch);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   GENERAL LINKS
+   ========================================================= */
+
 a {
   color: rgb(68, 106, 190);
   cursor: pointer;
 }
+
 a:hover {
   color: rgb(106, 137, 203);
 }
 
-/* --------------------- Style text - foot note under figures & tables (notes) */
-.text_footnote_fig_tables {
-  margin-bottom: 2.5rem;
-  font-size: smaller;
-  font-style: italic;
-}
 
-/* --------------------- style fig caption - center */
-figcaption {
-  margin: auto;
-  text-align: center;
-}
-
-/* -----------------------------------  style the citation links -draw line from center to the ends */
+/* =========================================================
+   CITATION LINKS
+   ========================================================= */
 
 .citation a {
   color: rgb(68, 106, 190);
@@ -85,7 +262,7 @@ figcaption {
   position: absolute;
   left: 50%;
   bottom: -2px;
-  width: 0px;
+  width: 0;
   height: 1px;
   background: rgb(32, 68, 144);
   transition: all 0.45s;
@@ -100,7 +277,11 @@ figcaption {
   color: rgb(106, 137, 203);
 }
 
-/* style the table and figue citations*/
+
+/* =========================================================
+   FIGURE / TABLE CROSS-REFERENCES
+   ========================================================= */
+
 .quarto-xref {
   color: rgb(68, 106, 190);
   cursor: pointer;
@@ -111,64 +292,256 @@ figcaption {
   color: rgb(106, 137, 203);
 }
 
-/* ----------------------------------------- style sidebar links : stylin if on page */
 
-/* #quarto-sidebar > * {
-  padding-right: 0em;
-  padding-left: 5px;
+/* =========================================================
+   FIGURE CAPTIONS
+   ========================================================= */
+
+figcaption {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-.sidebar-header {
-  padding-right: 1em;
+
+/* =========================================================
+   FIGURE / TABLE FOOTNOTES
+   ========================================================= */
+
+.text_footnote_fig_tables {
+  margin-bottom: 2.5rem;
+  font-size: smaller;
+  font-style: italic;
 }
 
-#quarto-search {
-  padding-right: 1em;
-} */
 
-.sidebar-item-container {
-  padding: 5px 5px; /* Increase padding for more space around the text */
-  margin-bottom: 5px; /* Add some space between menu items */
-  border-radius: 3px; /* round the corners */
-  padding-right: -10px;
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* set background color on page we are on - active page */
-.sidebar-item-container:has(a.active) {
-  background-color: grey;
-}
-.sidebar-item-container a.active .chapter-number,
-.sidebar-item-container a.active .chapter-title,
-.sidebar-item-container a.active .menu-text {
-  color: white;
-}
 
-.sidebar-item-container a {
-  color: #333; /* Set text color for links */
-  text-decoration: none; /* Remove underline */
-  display: block; /* Ensure the link fills the container */
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table {
+  max-width: 100%;
 }
 
-/* ------------------------------------------ hover effect sidebar draw lines */
 
-.sidebar-item-container a {
-  color: #333;
-  cursor: pointer;
-  position: relative;
+/* =========================================================
+   BLOCKQUOTES
+   ========================================================= */
+
+blockquote {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  line-height: 1.7;
 }
 
-.sidebar-item-container a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -2px;
-  width: 0px;
-  height: 0.1px;
-  background: grey;
-  transition: all 0.25s;
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+.paratext ul,
+.paratext ol {
+  line-height: 1.7;
 }
 
-.sidebar-item-container a:hover::after {
-  width: 85%;
-  left: 0;
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   HORIZONTAL RULE
+   ========================================================= */
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+code {
+  border-radius: 3px;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ---------------------------------------------------------
+   Main page follows Quarto's dark theme.
+   Sidebar remains fixed grey.
+   ========================================================= */
+
+[data-bs-theme="dark"] #quarto-sidebar {
+  background-color: #d3d3d3;
+}
+
+
+/* Sidebar text in dark mode */
+
+[data-bs-theme="dark"] #quarto-sidebar a {
+  color: #222222;
+}
+
+
+/* Sidebar tools/icons in dark mode */
+
+[data-bs-theme="dark"] #quarto-sidebar .sidebar-tools-main i {
+  color: #222222;
+}
+
+
+/* Active sidebar item */
+
+[data-bs-theme="dark"] .sidebar-item-container:has(a.active) {
+  background-color: #707070;
+}
+
+
+/* Active sidebar text */
+
+[data-bs-theme="dark"] .sidebar-item-container a.active .chapter-number,
+[data-bs-theme="dark"] .sidebar-item-container a.active .chapter-title,
+[data-bs-theme="dark"] .sidebar-item-container a.active .menu-text {
+  color: #ffffff;
+}
+
+
+/* Sidebar hover underline */
+
+[data-bs-theme="dark"] .sidebar-item-container a::after {
+  background: #555555;
+}
+
+
+/* =========================================================
+   DARK MODE LINKS
+   ---------------------------------------------------------
+   Slightly brighter blue so links remain readable against
+   the dark page background.
+   ========================================================= */
+
+[data-bs-theme="dark"] a {
+  color: #8ab4f8;
+}
+
+[data-bs-theme="dark"] a:hover {
+  color: #b3ccf5;
+}
+
+
+/* Citation links */
+
+[data-bs-theme="dark"] .citation a {
+  color: #8ab4f8;
+}
+
+[data-bs-theme="dark"] .citation a:hover {
+  color: #b3ccf5;
+}
+
+[data-bs-theme="dark"] .citation a::after {
+  background: #8ab4f8;
+}
+
+
+/* Figure / table cross-references */
+
+[data-bs-theme="dark"] .quarto-xref {
+  color: #8ab4f8;
+}
+
+[data-bs-theme="dark"] .quarto-xref:hover {
+  color: #b3ccf5;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+  #quarto-document-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  #quarto-document-content {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .paratext {
+    line-height: 1.65;
+  }
+
+  blockquote {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .paratext .paratext_quote {
+    width: 95%;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  #quarto-document-content {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .paratext {
+    text-align: left;
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .paratext .paratext_quote {
+    width: 100%;
+  }
+
 }

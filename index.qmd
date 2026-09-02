@@ -21,76 +21,76 @@ Furthermore, the impact of different energy heat sources and three energy system
 
 <div class="table-container">
   <table>
-  <tr class="headers">
-  
-      <th colspan="2">
-      <img src="assets/python_icon.png" alt="Python Icon" class="icon">
-      Python
-      </th>
-      
-      <th colspan="2">
-      <img src="assets/r_icon.png" alt="R Icon" class="icon">
-      R
-      </th>
-  </tr>
-  <!-- ROW 1 -->
-  <tr>
-      <td class="narrow item"></td>
-      <td class="wide item main"> 
-        <img src="assets/data-processing_icon_2.png" alt="data-processing" class="mini_icon"> 
-        - Data cleaning and pre-processing
-      </td>
-      <td class="narrow item"></td>
-      <td class="wide item">
-        <img src="assets/data_visualization_icon.png" alt="data_visualization_icon" class="mini_icon">
-        - Data visualization
-      </td>
-  </tr>
-  <!-- ROW 2 -->
-  <tr>
-      <td class="narrow item"></td>
-      <td class="wide item main">
-        <img src="assets/web_scraping_icon_2.png" alt="web-scraping" class="mini_icon">
-        - Web scraping 
-      </td>
-      <td class="narrow item"></td>
-      <td class="wide item">
-        <img src="assets/linear-regression_icon.png" alt="linear-regression_icon" class="mini_icon">
-        - Regression modelling
-      </td>
-  </tr>
-  <!-- ROW 3 -->
-  <tr>
-      <td class="narrow item"></td>
-      <td class="wide item main">
-        <img src="assets/pdf_text_icon.png" alt="pdf text" class="mini_icon">
-        - PDF parsing (The EPC reports)
-      </td>
-  </tr>
-  <!-- ROW 4 -->
-  <tr>
-      <td class="narrow item"></td>
-      <td class="wide item main">
-        <img src="assets/nlp_icon.png" alt="NLP icon" class="mini_icon">
-        - Text classification models (NLP)
-      </td>
-  </tr>
-  <!-- ROW 5 -->
-  <tr>
-      <td class="narrow item"></td>
-      <td class="wide item main">
-        <img src="assets/ocr_icon.png" alt="OCR icon" class="mini_icon">
-        - Optical character recognition (OCR)
-      </td>
-  </tr>
-  <!-- ROW 6 -->
-  <tr>
-      <td class="narrow item"></td>
-      <td class="wide item main">
-        <img src="assets/geographical-data_icon.png" alt="Geographical data icon" class="mini_icon">
-        - Geographical data extraction
-      </td>
-  </tr>
+<tr class="headers">
+
+<th colspan="2">
+<img src="assets/python_icon.png" alt="Python Icon" class="icon">
+Python
+</th>
+
+<th colspan="2">
+<img src="assets/r_icon.png" alt="R Icon" class="icon">
+R
+</th>
+</tr>
+<!-- ROW 1 -->
+<tr>
+<td class="narrow item"></td>
+<td class="wide item main"> 
+<img src="assets/data-processing_icon_2.png" alt="data-processing" class="mini_icon"> 
+- Data cleaning and pre-processing
+</td>
+<td class="narrow item"></td>
+<td class="wide item">
+<img src="assets/data_visualization_icon.png" alt="data_visualization_icon" class="mini_icon">
+- Data visualization
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr>
+<td class="narrow item"></td>
+<td class="wide item main">
+<img src="assets/web_scraping_icon_2.png" alt="web-scraping" class="mini_icon">
+- Web scraping 
+</td>
+<td class="narrow item"></td>
+<td class="wide item">
+<img src="assets/linear-regression_icon.png" alt="linear-regression_icon" class="mini_icon">
+- Regression modelling
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr>
+<td class="narrow item"></td>
+<td class="wide item main">
+<img src="assets/pdf_text_icon.png" alt="pdf text" class="mini_icon">
+- PDF parsing (The EPC reports)
+</td>
+</tr>
+<!-- ROW 4 -->
+<tr>
+<td class="narrow item"></td>
+<td class="wide item main">
+<img src="assets/nlp_icon.png" alt="NLP icon" class="mini_icon">
+- Text classification models (NLP)
+</td>
+</tr>
+<!-- ROW 5 -->
+<tr>
+<td class="narrow item"></td>
+<td class="wide item main">
+<img src="assets/ocr_icon.png" alt="OCR icon" class="mini_icon">
+- Optical character recognition (OCR)
+</td>
+</tr>
+<!-- ROW 6 -->
+<tr>
+<td class="narrow item"></td>
+<td class="wide item main">
+<img src="assets/geographical-data_icon.png" alt="Geographical data icon" class="mini_icon">
+- Geographical data extraction
+</td>
+</tr>
 </table>
 </div>
 ```

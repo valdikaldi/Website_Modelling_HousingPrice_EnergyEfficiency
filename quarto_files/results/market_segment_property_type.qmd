@@ -2,7 +2,7 @@
 # title: "About"
 ---
 
-# 6. Results
+# 6.2 Market Segment: Property type
 
 ```{r}
 1 + 1

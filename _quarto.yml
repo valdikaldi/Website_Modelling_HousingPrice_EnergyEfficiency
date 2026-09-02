@@ -23,7 +23,13 @@ book:
       chapters: 
         - quarto_files/empirical_strategy/empirical_strategy_HedonicModel.qmd
         - quarto_files/empirical_strategy/empirical_strategy_EstimationStrategy.qmd
-    - quarto_files/results.qmd
+    - part: "6. Results"
+      chapters: 
+        - quarto_files\results\main_result.qmd
+        - quarto_files\results\market_segment_property_type.qmd
+        - quarto_files\results\policy_effect.qmd
+        - quarto_files\results\robustness_tests.qmd
+    # - quarto_files/results.qmd
     - quarto_files/discussion.qmd
     - quarto_files/references.qmd
     - quarto_files/appendix.qmd
@@ -71,16 +77,19 @@ format:
     toc-expand: 3
     code-fold: true
     number-sections: false
+
     theme:
-      light: sandstone
-      dark: solar
+      light: cosmo
+      dark: darkly
+    
     css: 
       - main_styles.css
+    
     grid:
-      body-width: 1500px
+      body-width: 1100px
       sidebar-width: 250px
-      margin-width: 350px
-      gutter-width: 3.5rem
+      margin-width: 180px
+      gutter-width: 1.5rem
     # add icon to the browser tab
     include-in-header:
       - text: |
