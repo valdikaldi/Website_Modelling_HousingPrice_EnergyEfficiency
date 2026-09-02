@@ -25,10 +25,10 @@ book:
         - quarto_files/empirical_strategy/empirical_strategy_EstimationStrategy.qmd
     - part: "6. Results"
       chapters: 
-        - quarto_files\results\main_result.qmd
-        - quarto_files\results\market_segment_property_type.qmd
-        - quarto_files\results\policy_effect.qmd
-        - quarto_files\results\robustness_tests.qmd
+        - quarto_files/results/main_result.qmd
+        - quarto_files/results/market_segment_property_type.qmd
+        - quarto_files/results/policy_effect.qmd
+        - quarto_files/results/robustness_tests.qmd
     # - quarto_files/results.qmd
     - quarto_files/discussion.qmd
     - quarto_files/references.qmd
