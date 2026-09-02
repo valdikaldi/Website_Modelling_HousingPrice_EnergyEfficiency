@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4.3 Geographical data – Are home buyers inattentive towards energy efficiency?</title>
+<title>6.4 Robustness Tests – Are home buyers inattentive towards energy efficiency?</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -54,8 +54,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../quarto_files/empirical_strategy/empirical_strategy_HedonicModel.html" rel="next">
-<link href="../../quarto_files/data/data_EPC.html" rel="prev">
+<link href="../../quarto_files/discussion.html" rel="next">
+<link href="../../quarto_files/results/policy_effect.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -97,11 +97,38 @@ div.csl-indent {
   }
 }</script>
 <link rel="icon" type="image/png" href="assets/cover.jpg">
-<link rel="icon" type="image/png" href="../../assets/cover.jpg">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../main_styles.css">
-<link rel="stylesheet" href="../../additional_styles/styles_chapter4_3_data.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -294,7 +321,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/data/data_housing.html">4. Data</a></li><li class="breadcrumb-item"><a href="../../quarto_files/data/data_geo.html"><span class="chapter-title">4.3 Geographical data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/results/main_result.html">6. Results</a></li><li class="breadcrumb-item"><a href="../../quarto_files/results/robustness_tests.html"><span class="chapter-title">6.4 Robustness Tests</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -367,7 +394,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quarto_files/data/data_geo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">4.3 Geographical data</span></a>
+  <a href="../../quarto_files/data/data_geo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.3 Geographical data</span></a>
   </div>
 </li>
       </ul>
@@ -419,7 +446,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quarto_files/results/robustness_tests.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.4 Robustness Tests</span></a>
+  <a href="../../quarto_files/results/robustness_tests.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">6.4 Robustness Tests</span></a>
   </div>
 </li>
       </ul>
@@ -445,16 +472,28 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-result-robustness-tests" id="toc-sec-result-robustness-tests" class="nav-link active" data-scroll-target="#sec-result-robustness-tests">6.4 Robustness Tests</a>
+  <ul class="collapse">
+  <li><a href="#outliers-and-potential-data-errors" id="toc-outliers-and-potential-data-errors" class="nav-link" data-scroll-target="#outliers-and-potential-data-errors">Outliers and Potential Data Errors</a></li>
+  <li><a href="#energy-consumption" id="toc-energy-consumption" class="nav-link" data-scroll-target="#energy-consumption">Energy Consumption</a></li>
+  <li><a href="#time-on-the-market" id="toc-time-on-the-market" class="nav-link" data-scroll-target="#time-on-the-market">Time on the Market</a></li>
+  <li><a href="#robustness-of-text-classification" id="toc-robustness-of-text-classification" class="nav-link" data-scroll-target="#robustness-of-text-classification">Robustness of Text Classification</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/data/data_housing.html">4. Data</a></li><li class="breadcrumb-item"><a href="../../quarto_files/data/data_geo.html"><span class="chapter-title">4.3 Geographical data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/results/main_result.html">6. Results</a></li><li class="breadcrumb-item"><a href="../../quarto_files/results/robustness_tests.html"><span class="chapter-title">6.4 Robustness Tests</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">4.3 Geographical data</span></h1>
+<h1 class="title"><span class="chapter-title">6.4 Robustness Tests</span></h1>
 </div>
 
 
@@ -471,262 +510,51 @@ div.csl-indent {
 </header>
 
 
-<div class="paratext">
-<p>To control for surrounding characteristics of properties, i.e.&nbsp;neighbourhood characteristics, we construct variables from geographical data. We begin by constructing dummy variables characterising the area surrounding the properties, such as highways, train tracks, forests and the ocean. These dummy variables are constructed by creating a 100 meter buffer, i.e., a circle with a radius of 100 meters is created around the coordinates of properties, and if a point of an object of interest falls within the buffer zone, then the dummy variable gets the value 1 else 0. Note that the coordinates of the properties were obtained when scraping the <span class="citation" data-cites="boliga_boliga_nodate">Boliga (<a href="../references.html#ref-boliga_boliga_nodate" role="doc-biblioref">n.d.</a>)</span> website. Defining the area of properties, i.e., neighbourhoods can be a bit tricky as there is no consensus on the definition of what constitutes a neighbourhood in terms of meters or kilometres. Throughout this paper, we will use a 100-meter buffer size, and we will also use different buffer sizes as robustness tests. To create these dummy variables, we use the Geofabrik OSM dataset for Denmark, which is compiled data from OpenStreetMap <span class="citation" data-cites="geofabrik_gmbh_denmark_nodate">(<a href="../references.html#ref-geofabrik_gmbh_denmark_nodate" role="doc-biblioref">Geofabrik GmbH, n.d.</a>)</span>. Next, we calculate the road distance in minutes from the capital, i.e.&nbsp;Copenhagen, and the radius of the surface area from a 30-minute isochrone with a car of each property.</p>
-<p>An isochrone represents a surface area which is reachable from a given point within a specific time threshold. The intuition of taking the radius from the isochrone area is to construct a simple proxy variable to represent accessibility. We took inspiration from <span class="citation" data-cites="biazzo_general_2019">Biazzo et al. (<a href="../references.html#ref-biazzo_general_2019" role="doc-biblioref">2019</a>)</span> when creating our accessibility variable. The accessibility variable used in this paper will therefore represent the radius of the surface area for each dwelling at a 30 minute time threshold with a car. In relation to this, <span class="citation" data-cites="wahlstrom_doing_2016">Wahlström (<a href="../references.html#ref-wahlstrom_doing_2016" role="doc-biblioref">2016</a>)</span> used an accessibility index to account for potential spatial auto-correlations, however, they compute their accessibility as the travel time between municipalities with respect to the population of municipality of destination.</p>
-<p>To compute both our accessibility variable and the road travel time to Copenhagen in minutes for each dwelling, we utilised a docker image of the Valhalla Route Engine <span class="citation" data-cites="valhalla_developers_valhalla_nodate">(<a href="../references.html#ref-valhalla_developers_valhalla_nodate" role="doc-biblioref">Valhalla Developers, n.d.</a>)</span>. Valhalla, an open-source route engine, provides a range of tools for geographical data analysis, including the calculation of isochrones for points of interest and the travel time in minutes between two points <span class="citation" data-cites="valhalla_developers_valhalla_nodate">(<a href="../references.html#ref-valhalla_developers_valhalla_nodate" role="doc-biblioref">Valhalla Developers, n.d.</a>)</span>. In addition, we incorporate the average population density of Denmark at a 1km grid level. Eurostat provides access to population density at grid level for four census years: 2006, 2011, 2018 and 2021 [<span class="citation" data-cites="eurostat_population_2023">Eurostat (<a href="../references.html#ref-eurostat_population_2023" role="doc-biblioref">2023</a>)</span>}. We aggregate the data from all census years, resulting in our population density variable representing the average population density at a 1 km grid level over the specified period.</p>
-<p>Table <a href="#tbl-geo_summarystatistic" class="quarto-xref">Table&nbsp;<span>5.1</span></a> displays summary statistics of the geographical data utilised in our analysis. All the categorical variables i.e.&nbsp;the buffers, are based on a 100 meter radius. Among the insights the summary statistics conveys is the distance to the capital. The furthest distance from the capital that we calculate using Valhalla route engine is approximately 410 minutes or 6,83 hours. This point is located in the Island called Bornholm. The reason it is so far is because it involves driving to the harbour in Rønne on Bornholm, taking a ferry with the car to a town called Køge, and then driving from Køge to Copenhagen.</p>
-</div>
-<!-- SUMMARY STATISTICS TABLE ADD HERE -->
-<div id="tbl-geo_summarystatistic" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-geo_summarystatistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.1
-</figcaption>
-<div aria-describedby="tbl-geo_summarystatistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="border_table">
-
-<table class="tg">
-
-<thead>
-  <tr>
-      <th class="tg-c3ow table_header" colspan="10">
-        <span class="bordered-text">Continuous Variables</span>
-      </th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-fymr col_name">Variable</td>
-    <td class="tg-7btt col_name">N</td>
-    <td class="tg-7btt col_name">Mean</td>
-    <td class="tg-7btt1 col_name" colspan="2">Std. Dev.</td>
-    <td class="tg-7btt col_name">Min</td>
-    <td class="tg-6ic8 col_name">Pctl. 25</td>
-    <td class="tg-6ic8 col_name">Pctl. 75</td>
-    <td class="tg-7btt col_name">Max</td>
-    <td class="tg-7btt col_name">Unit</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Isochrone radius</td>
-    <td class="tg-dvpl">728,795</td>
-    <td class="tg-dvpl">23,502.81</td>
-    <td class="tg-dvpl" colspan="2">4,582.44</td>
-    <td class="tg-dvpl">471.5563</td>
-    <td class="tg-dvpl"> 20,640.85</td>
-    <td class="tg-dvpl">26,798</td>
-    <td class="tg-dvpl"> 35,168.41</td>
-    <td class="tg-c3ow">Meters</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Distance to capital</td>
-    <td class="tg-dvpl">728,795</td>
-    <td class="tg-dvpl">105.315</td>
-    <td class="tg-dvpl" colspan="2">79.91995</td>
-    <td class="tg-dvpl"> 0.8377333</td>
-    <td class="tg-dvpl">26.19262</td>
-    <td class="tg-dvpl"> 165.0298</td>
-    <td class="tg-dvpl"> 409.5823</td>
-    <td class="tg-c3ow">Minutes</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Avarage population density</td>
-    <td class="tg-dvpl"> 728,795</td>
-    <td class="tg-dvpl">2,768.03</td>
-    <td class="tg-dvpl" colspan="2">3,818.33</td>
-    <td class="tg-dvpl">0.25</td>
-    <td class="tg-dvpl"> 555.5</td>
-    <td class="tg-dvpl">3,128.25</td>
-    <td class="tg-dvpl"> 20,820.5</td>
-    <td class="tg-c3ow">Number of <br>people</td>
-  </tr>
-
-</tbody><thead>
-  <tr>
-    <th class="tg-c3ow table_header" colspan="10">
-      <span class="bordered-text">Categorical Variables  (Total = 728,795):</span>
-    </th>
-  </tr>
-</thead>
-
-  <tbody><tr>
-    <td class="tg-fymr col_name">Variable</td>
-    <td class="tg-fymr col_name">Category</td>
-    <td class="tg-7btt col_name">Frequency</td>
-    <td class="tg-7btt col_name">% of Total</td>
-    <td class="tg-0pky col_name"></td>
-    <td class="tg-fymr col_name" colspan="2">Variable</td>
-    <td class="tg-fymr col_name">Category</td>
-    <td class="tg-7btt col_name">Frequency</td>
-    <td class="tg-7btt col_name">% of Total</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Forest buffer</td>
-    <td class="tg-dvpl">No</td>
-    <td class="tg-dvpl">577,986</td>
-    <td class="tg-dvpl">79%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">River, stream or canal buffer</td>
-    <td class="tg-dvpl">No</td>
-    <td class="tg-dvpl">716,546</td>
-    <td class="tg-c3ow">98%</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">150,809</td>
-    <td class="tg-dvpl">21%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">12,249</td>
-    <td class="tg-c3ow">2%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Park buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">606,904</td>
-    <td class="tg-dvpl dash_line">83%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">Meadow, scrub or heath buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">652,828</td>
-    <td class="tg-c3ow dash_line">90%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">121,891</td>
-    <td class="tg-dvpl">17%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">75,967</td>
-    <td class="tg-c3ow">10%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Industrial buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">697,456</td>
-    <td class="tg-dvpl dash_line">96%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">Motorway, trunk or primary road buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">709,086</td>
-    <td class="tg-c3ow dash_line">97%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">31,339</td>
-    <td class="tg-dvpl">4%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">19,709</td>
-    <td class="tg-c3ow">3%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Nature reserve buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">723,386</td>
-    <td class="tg-dvpl dash_line">99%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">Rail- or light railway buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">692,909</td>
-    <td class="tg-c3ow dash_line">95%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">5,409</td>
-    <td class="tg-dvpl">1%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">35,886</td>
-    <td class="tg-c3ow">5%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Wetland buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">723,416</td>
-    <td class="tg-dvpl dash_line">99%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">Water or resovoir buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">669,677</td>
-    <td class="tg-c3ow dash_line">92%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">5,379</td>
-    <td class="tg-dvpl">1%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">59,118</td>
-    <td class="tg-c3ow">8%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Ocean or beach buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">710,742</td>
-    <td class="tg-dvpl dash_line">98%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">18,053</td>
-    <td class="tg-dvpl">2%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
+<section id="sec-result-robustness-tests" class="level1">
+<h1>6.4 Robustness Tests</h1>
+<p>In this chapter, we assess the robustness of the main results and address potential limitations of the analysis. To do so, we conduct several alterations to the model specification and its variables. These modifications aim to evaluate the stability and reliability of our final specification, as detailed in <span class="quarto-unresolved-ref">?eq-final-regression</span>. The results are presented in <span class="quarto-unresolved-ref">?tbl-regression-robust-testing</span>, with Model 1 representing the main specification of <span class="quarto-unresolved-ref">?eq-final-regression</span>, corresponding to Model 6 in <span class="quarto-unresolved-ref">?tbl-main-results</span>.</p>
+<section id="outliers-and-potential-data-errors" class="level2">
+<h2 class="anchored" data-anchor-id="outliers-and-potential-data-errors">Outliers and Potential Data Errors</h2>
+<p>In Models 2 to 4, we alter the control and dependent variables by removing potential outliers and data errors to assess the robustness of our main results. In Model 2, we remove observations with sales prices greater than DKK 10 million (EUR 1.3 million). In Model 3, we exclude observations where the price per square metre is less than DKK [XX] (EUR 39) or greater than DKK 95,000 (EUR 12,350).</p>
+<p>In Model 4, we remove observations based on selected control variables. Specifically, we exclude properties where the energy source is unknown, properties with more than four bathrooms or no bathroom, properties with more than four toilets, and properties with more than seven rooms or no rooms. In Model 5, we combine all the criteria from Models 2 to 4.</p>
+<p>Across Models 2 to 5, the key variables do not appear to change substantially in terms of their signs or statistical significance. However, similar to the results found for the property-type segment, Model 5 shows that, on average, the most energy-efficient EPC label, A2020, does not appear to outperform label A2015 in terms of its price premium. This result provides further evidence of a potential non-linear relationship between energy efficiency and property prices. While energy-efficient properties are generally valued more highly than less energy-efficient properties, there appears to be a threshold beyond which additional improvements in energy efficiency do not translate into additional property value.</p>
+<p>Regarding model fit, Model 5 produces a within <span class="math inline">\(R^2\)</span> of up to 0.527, compared with 0.442 in our main specification (Model 6 in <span class="quarto-unresolved-ref">?tbl-main-results</span>). This indicates that Model 5 explains 52.7% of the variation in property prices within the fixed-effects clusters.</p>
+</section>
+<section id="energy-consumption" class="level2">
+<h2 class="anchored" data-anchor-id="energy-consumption">Energy Consumption</h2>
+<p>Furthermore, we utilise the energy consumption of dwellings as an alternative measure of energy efficiency. In this specification, <span class="math inline">\(EE_i\)</span> in <span class="quarto-unresolved-ref">?eq-final-regression</span> represents the natural logarithm of the estimated annual energy consumption of dwelling <span class="math inline">\(i\)</span>, measured in kWh.</p>
+<p>The purpose of using energy consumption is to assess whether the findings are consistent with those obtained using EPC labels. If a price premium is found for energy-efficient labels, where estimated energy consumption is an important determinant of these labels, one would expect energy consumption to produce similar results. Specifically, higher energy consumption should be associated with larger price discounts.</p>
+<p>However, if this is not the case, one possible explanation is that the signalling effect of EPC labels is more important to consumers than the underlying estimated energy consumption. Consumers may not necessarily expect their actual energy consumption to correspond to the amount reported in the EPC report. This argument is consistent with the findings of <span class="citation" data-cites="wahlstrom_doing_2016">Wahlström (<a href="../references.html#ref-wahlstrom_doing_2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>For this interpretation to hold, however, we must assume that the EPC labels are genuinely capturing a signalling effect rather than incorporating other potential effects, such as omitted variables or measurement errors. Alternatively, differences between the effects of EPC labels and energy consumption could indicate potential bias or measurement error in our regression.</p>
+<p>The results are presented in Model 6 and support the findings from the main analysis. Energy consumption has a negative and statistically significant effect on property prices at the 1% level. Based on the estimated coefficient, a 1% increase in energy consumption is associated with a 9.7% decrease in property prices. This result indicates that property prices are relatively elastic with respect to estimated energy consumption.</p>
+<p>It is worth noting that, due to limitations in the data extraction process from the EPC reports, we were unable to extract estimated energy consumption for all properties. This is due both to data errors and to the fact that many EPC reports do not provide an estimate of energy consumption. Consequently, the sample used when analysing energy consumption contains 582,690 observations, which is approximately 20% smaller than the full sample used in the main analysis.</p>
+</section>
+<section id="time-on-the-market" class="level2">
+<h2 class="anchored" data-anchor-id="time-on-the-market">Time on the Market</h2>
+<p>Next, we address potential bias related to the relationship between price and demand by using time on the market as a proxy for demand. This approach addresses the possibility that lower transaction prices may be associated with longer selling periods due to lower demand.</p>
+<p>By analysing how quickly energy-efficient properties sell in addition to their transaction prices, we can assess whether the observed effects of energy efficiency are also reflected in market liquidity and are therefore not solely driven by price mechanisms.</p>
+<p>The results are presented in Model 7 and further complement the main findings, as well as the previous evidence regarding a potential non-linear relationship between energy efficiency and property prices. Using time on the market as an alternative outcome measure, we find that A2010 properties sell the fastest, followed by A2020 and A2015 properties. This pattern reinforces the observed non-linear relationship between energy efficiency and property prices.</p>
+<p>Model 7 shows that properties labelled A2020, A2015, and A2010 are sold, on average, 31, 24, and 34 days faster than D-labelled properties, respectively. Properties labelled B and C are sold, on average, 18 and 16 days faster than D-labelled properties. Conversely, properties labelled E, F, and G, which are less energy-efficient, take, on average, 13, 22, and 26 days longer to sell than D-labelled properties.</p>
+<p>Additionally, these results are consistent with insights provided by real estate agents, as discussed in <span class="quarto-unresolved-ref">?sec-epbd-danish-epc-scheme</span>.</p>
+</section>
+<section id="robustness-of-text-classification" class="level2">
+<h2 class="anchored" data-anchor-id="robustness-of-text-classification">Robustness of Text Classification</h2>
+<p>Finally, we assess the robustness of the observed price premiums associated with solar heating, solar cells, and heat pumps, as reported in the main results (Model 6 in <span class="quarto-unresolved-ref">?tbl-main-results</span>). We do this by estimating multiple models based on <span class="quarto-unresolved-ref">?eq-final-regression</span> while continuously increasing the probability threshold used to classify the three variables.</p>
+<p>The findings are presented in <span class="quarto-unresolved-ref">?tbl-robust-test-text-classification</span>. As before, Model 1 represents the main specification, using an 85% probability threshold for all three variables. For Models 2 through 7, the probability thresholds are increased to 90%, 95%, 96%, 97%, 98%, and 99%, respectively.</p>
+<p>For solar heating and solar cells, the coefficients are relatively stable, with only minor changes, and remain statistically significant at the 1% level across all specifications.</p>
+<p>Interestingly, as the probability threshold for solar cells increases, the estimated price premium also increases, ranging from 3.35% to 4.48%. In contrast, the price premium associated with solar heating decreases as the probability threshold increases, ranging from 1.0% to 1.9%.</p>
+<p>For heat pumps, the statistical significance changes from the 1% level in Model 1 to the 5% level for probability thresholds between 95% and 97%, before returning to the 1% level at the 98% and 99% thresholds. However, the estimated coefficient for heat pumps changes only marginally, ranging from 0.40% to 0.72%.</p>
+<p>Moreover, the coefficients of the other key variables and control variables do not appear to change substantially as the probability threshold increases. It is worth noting that although increasing the probability threshold improves the precision of the classification by reducing the number of false-positive observations, this comes at the potential cost of increasing the number of false-negative observations.</p>
+<p>Nevertheless, regardless of the probability threshold applied, all three components have a positive estimated effect on property prices. However, the relatively small and less stable coefficient for heat pumps suggests that home buyers may place less value on heat pumps compared with solar cells and solar heating.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-biazzo_general_2019" class="csl-entry" role="listitem">
-Biazzo, Indaco, Bernardo Monechi, and Vittorio Loreto. 2019. <span>“General Scores for Accessibility and Inequality Measures in Urban Areas.”</span> <em>Royal Society Open Science</em> 6 (8): 190979. <a href="https://doi.org/10.1098/rsos.190979">https://doi.org/10.1098/rsos.190979</a>.
-</div>
-<div id="ref-boliga_boliga_nodate" class="csl-entry" role="listitem">
-Boliga. n.d. <em>Boliga</em>. Accessed June 15, 2023. <a href="https://www.boliga.dk">https://www.boliga.dk</a>.
-</div>
-<div id="ref-eurostat_population_2023" class="csl-entry" role="listitem">
-Eurostat. 2023. <em>Population Density Data - <span>Eurostat</span></em>. <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/grids">https://ec.europa.eu/eurostat/web/gisco/geodata/grids</a>.
-</div>
-<div id="ref-geofabrik_gmbh_denmark_nodate" class="csl-entry" role="listitem">
-Geofabrik GmbH. n.d. <em>Denmark <span>OpenStreetMap</span> <span>Data</span></em>. Accessed November 15, 2023. <a href="https://download.geofabrik.de/europe/denmark.html">https://download.geofabrik.de/europe/denmark.html</a>.
-</div>
-<div id="ref-valhalla_developers_valhalla_nodate" class="csl-entry" role="listitem">
-Valhalla Developers. n.d. <em>Valhalla <span>Route</span> <span>Engine</span></em>. Accessed January 12, 2024. <a href="https://github.com/valhalla/valhalla?tab=readme-ov-file">https://github.com/valhalla/valhalla?tab=readme-ov-file</a>.
-</div>
 <div id="ref-wahlstrom_doing_2016" class="csl-entry" role="listitem">
 Wahlström, Marie H. 2016. <span>“Doing Good but Not That Well? <span>A</span> Dilemma for Energy Conserving Homeowners.”</span> <em>Energy Economics</em> 60 (November): 197–205. <a href="https://doi.org/10.1016/j.eneco.2016.09.025">https://doi.org/10.1016/j.eneco.2016.09.025</a>.
 </div>
 </div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1144,13 +972,13 @@ Wahlström, Marie H. 2016. <span>“Doing Good but Not That Well? <span>A</span>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../quarto_files/data/data_EPC.html" class="pagination-link" aria-label="4.2 EPC Reports data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">4.2 EPC Reports data</span></span>
+      <a href="../../quarto_files/results/policy_effect.html" class="pagination-link" aria-label="6.3 Policy Effect">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">6.3 Policy Effect</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../quarto_files/empirical_strategy/empirical_strategy_HedonicModel.html" class="pagination-link" aria-label="5.1 Hedonic model">
-        <span class="nav-page-text"><span class="chapter-title">5.1 Hedonic model</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../quarto_files/discussion.html" class="pagination-link" aria-label="7. Discussion">
+        <span class="nav-page-text"><span class="chapter-title">7. Discussion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

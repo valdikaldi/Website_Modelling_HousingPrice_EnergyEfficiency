@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4.3 Geographical data – Are home buyers inattentive towards energy efficiency?</title>
+<title>6.3 Policy Effect – Are home buyers inattentive towards energy efficiency?</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -54,8 +54,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../quarto_files/empirical_strategy/empirical_strategy_HedonicModel.html" rel="next">
-<link href="../../quarto_files/data/data_EPC.html" rel="prev">
+<link href="../../quarto_files/results/robustness_tests.html" rel="next">
+<link href="../../quarto_files/results/market_segment_property_type.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -97,11 +97,9 @@ div.csl-indent {
   }
 }</script>
 <link rel="icon" type="image/png" href="assets/cover.jpg">
-<link rel="icon" type="image/png" href="../../assets/cover.jpg">
 
 
 <link rel="stylesheet" href="../../main_styles.css">
-<link rel="stylesheet" href="../../additional_styles/styles_chapter4_3_data.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -294,7 +292,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/data/data_housing.html">4. Data</a></li><li class="breadcrumb-item"><a href="../../quarto_files/data/data_geo.html"><span class="chapter-title">4.3 Geographical data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/results/main_result.html">6. Results</a></li><li class="breadcrumb-item"><a href="../../quarto_files/results/policy_effect.html"><span class="chapter-title">6.3 Policy Effect</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -367,7 +365,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quarto_files/data/data_geo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">4.3 Geographical data</span></a>
+  <a href="../../quarto_files/data/data_geo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.3 Geographical data</span></a>
   </div>
 </li>
       </ul>
@@ -414,7 +412,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quarto_files/results/policy_effect.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.3 Policy Effect</span></a>
+  <a href="../../quarto_files/results/policy_effect.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">6.3 Policy Effect</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,9 +450,9 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/data/data_housing.html">4. Data</a></li><li class="breadcrumb-item"><a href="../../quarto_files/data/data_geo.html"><span class="chapter-title">4.3 Geographical data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/results/main_result.html">6. Results</a></li><li class="breadcrumb-item"><a href="../../quarto_files/results/policy_effect.html"><span class="chapter-title">6.3 Policy Effect</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">4.3 Geographical data</span></h1>
+<h1 class="title"><span id="sec-result-policy-effect" class="quarto-section-identifier"><span class="chapter-title">6.3 Policy Effect</span></span></h1>
 </div>
 
 
@@ -471,260 +469,19 @@ div.csl-indent {
 </header>
 
 
-<div class="paratext">
-<p>To control for surrounding characteristics of properties, i.e.&nbsp;neighbourhood characteristics, we construct variables from geographical data. We begin by constructing dummy variables characterising the area surrounding the properties, such as highways, train tracks, forests and the ocean. These dummy variables are constructed by creating a 100 meter buffer, i.e., a circle with a radius of 100 meters is created around the coordinates of properties, and if a point of an object of interest falls within the buffer zone, then the dummy variable gets the value 1 else 0. Note that the coordinates of the properties were obtained when scraping the <span class="citation" data-cites="boliga_boliga_nodate">Boliga (<a href="../references.html#ref-boliga_boliga_nodate" role="doc-biblioref">n.d.</a>)</span> website. Defining the area of properties, i.e., neighbourhoods can be a bit tricky as there is no consensus on the definition of what constitutes a neighbourhood in terms of meters or kilometres. Throughout this paper, we will use a 100-meter buffer size, and we will also use different buffer sizes as robustness tests. To create these dummy variables, we use the Geofabrik OSM dataset for Denmark, which is compiled data from OpenStreetMap <span class="citation" data-cites="geofabrik_gmbh_denmark_nodate">(<a href="../references.html#ref-geofabrik_gmbh_denmark_nodate" role="doc-biblioref">Geofabrik GmbH, n.d.</a>)</span>. Next, we calculate the road distance in minutes from the capital, i.e.&nbsp;Copenhagen, and the radius of the surface area from a 30-minute isochrone with a car of each property.</p>
-<p>An isochrone represents a surface area which is reachable from a given point within a specific time threshold. The intuition of taking the radius from the isochrone area is to construct a simple proxy variable to represent accessibility. We took inspiration from <span class="citation" data-cites="biazzo_general_2019">Biazzo et al. (<a href="../references.html#ref-biazzo_general_2019" role="doc-biblioref">2019</a>)</span> when creating our accessibility variable. The accessibility variable used in this paper will therefore represent the radius of the surface area for each dwelling at a 30 minute time threshold with a car. In relation to this, <span class="citation" data-cites="wahlstrom_doing_2016">Wahlström (<a href="../references.html#ref-wahlstrom_doing_2016" role="doc-biblioref">2016</a>)</span> used an accessibility index to account for potential spatial auto-correlations, however, they compute their accessibility as the travel time between municipalities with respect to the population of municipality of destination.</p>
-<p>To compute both our accessibility variable and the road travel time to Copenhagen in minutes for each dwelling, we utilised a docker image of the Valhalla Route Engine <span class="citation" data-cites="valhalla_developers_valhalla_nodate">(<a href="../references.html#ref-valhalla_developers_valhalla_nodate" role="doc-biblioref">Valhalla Developers, n.d.</a>)</span>. Valhalla, an open-source route engine, provides a range of tools for geographical data analysis, including the calculation of isochrones for points of interest and the travel time in minutes between two points <span class="citation" data-cites="valhalla_developers_valhalla_nodate">(<a href="../references.html#ref-valhalla_developers_valhalla_nodate" role="doc-biblioref">Valhalla Developers, n.d.</a>)</span>. In addition, we incorporate the average population density of Denmark at a 1km grid level. Eurostat provides access to population density at grid level for four census years: 2006, 2011, 2018 and 2021 [<span class="citation" data-cites="eurostat_population_2023">Eurostat (<a href="../references.html#ref-eurostat_population_2023" role="doc-biblioref">2023</a>)</span>}. We aggregate the data from all census years, resulting in our population density variable representing the average population density at a 1 km grid level over the specified period.</p>
-<p>Table <a href="#tbl-geo_summarystatistic" class="quarto-xref">Table&nbsp;<span>5.1</span></a> displays summary statistics of the geographical data utilised in our analysis. All the categorical variables i.e.&nbsp;the buffers, are based on a 100 meter radius. Among the insights the summary statistics conveys is the distance to the capital. The furthest distance from the capital that we calculate using Valhalla route engine is approximately 410 minutes or 6,83 hours. This point is located in the Island called Bornholm. The reason it is so far is because it involves driving to the harbour in Rønne on Bornholm, taking a ferry with the car to a town called Køge, and then driving from Køge to Copenhagen.</p>
-</div>
-<!-- SUMMARY STATISTICS TABLE ADD HERE -->
-<div id="tbl-geo_summarystatistic" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-geo_summarystatistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.1
-</figcaption>
-<div aria-describedby="tbl-geo_summarystatistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="border_table">
-
-<table class="tg">
-
-<thead>
-  <tr>
-      <th class="tg-c3ow table_header" colspan="10">
-        <span class="bordered-text">Continuous Variables</span>
-      </th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-fymr col_name">Variable</td>
-    <td class="tg-7btt col_name">N</td>
-    <td class="tg-7btt col_name">Mean</td>
-    <td class="tg-7btt1 col_name" colspan="2">Std. Dev.</td>
-    <td class="tg-7btt col_name">Min</td>
-    <td class="tg-6ic8 col_name">Pctl. 25</td>
-    <td class="tg-6ic8 col_name">Pctl. 75</td>
-    <td class="tg-7btt col_name">Max</td>
-    <td class="tg-7btt col_name">Unit</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Isochrone radius</td>
-    <td class="tg-dvpl">728,795</td>
-    <td class="tg-dvpl">23,502.81</td>
-    <td class="tg-dvpl" colspan="2">4,582.44</td>
-    <td class="tg-dvpl">471.5563</td>
-    <td class="tg-dvpl"> 20,640.85</td>
-    <td class="tg-dvpl">26,798</td>
-    <td class="tg-dvpl"> 35,168.41</td>
-    <td class="tg-c3ow">Meters</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Distance to capital</td>
-    <td class="tg-dvpl">728,795</td>
-    <td class="tg-dvpl">105.315</td>
-    <td class="tg-dvpl" colspan="2">79.91995</td>
-    <td class="tg-dvpl"> 0.8377333</td>
-    <td class="tg-dvpl">26.19262</td>
-    <td class="tg-dvpl"> 165.0298</td>
-    <td class="tg-dvpl"> 409.5823</td>
-    <td class="tg-c3ow">Minutes</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Avarage population density</td>
-    <td class="tg-dvpl"> 728,795</td>
-    <td class="tg-dvpl">2,768.03</td>
-    <td class="tg-dvpl" colspan="2">3,818.33</td>
-    <td class="tg-dvpl">0.25</td>
-    <td class="tg-dvpl"> 555.5</td>
-    <td class="tg-dvpl">3,128.25</td>
-    <td class="tg-dvpl"> 20,820.5</td>
-    <td class="tg-c3ow">Number of <br>people</td>
-  </tr>
-
-</tbody><thead>
-  <tr>
-    <th class="tg-c3ow table_header" colspan="10">
-      <span class="bordered-text">Categorical Variables  (Total = 728,795):</span>
-    </th>
-  </tr>
-</thead>
-
-  <tbody><tr>
-    <td class="tg-fymr col_name">Variable</td>
-    <td class="tg-fymr col_name">Category</td>
-    <td class="tg-7btt col_name">Frequency</td>
-    <td class="tg-7btt col_name">% of Total</td>
-    <td class="tg-0pky col_name"></td>
-    <td class="tg-fymr col_name" colspan="2">Variable</td>
-    <td class="tg-fymr col_name">Category</td>
-    <td class="tg-7btt col_name">Frequency</td>
-    <td class="tg-7btt col_name">% of Total</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Forest buffer</td>
-    <td class="tg-dvpl">No</td>
-    <td class="tg-dvpl">577,986</td>
-    <td class="tg-dvpl">79%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">River, stream or canal buffer</td>
-    <td class="tg-dvpl">No</td>
-    <td class="tg-dvpl">716,546</td>
-    <td class="tg-c3ow">98%</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">150,809</td>
-    <td class="tg-dvpl">21%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">12,249</td>
-    <td class="tg-c3ow">2%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Park buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">606,904</td>
-    <td class="tg-dvpl dash_line">83%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">Meadow, scrub or heath buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">652,828</td>
-    <td class="tg-c3ow dash_line">90%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">121,891</td>
-    <td class="tg-dvpl">17%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">75,967</td>
-    <td class="tg-c3ow">10%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Industrial buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">697,456</td>
-    <td class="tg-dvpl dash_line">96%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">Motorway, trunk or primary road buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">709,086</td>
-    <td class="tg-c3ow dash_line">97%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">31,339</td>
-    <td class="tg-dvpl">4%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">19,709</td>
-    <td class="tg-c3ow">3%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Nature reserve buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">723,386</td>
-    <td class="tg-dvpl dash_line">99%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">Rail- or light railway buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">692,909</td>
-    <td class="tg-c3ow dash_line">95%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">5,409</td>
-    <td class="tg-dvpl">1%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">35,886</td>
-    <td class="tg-c3ow">5%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Wetland buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">723,416</td>
-    <td class="tg-dvpl dash_line">99%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr" colspan="2">Water or resovoir buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">669,677</td>
-    <td class="tg-c3ow dash_line">92%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">5,379</td>
-    <td class="tg-dvpl">1%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">59,118</td>
-    <td class="tg-c3ow">8%</td>
-  </tr>
-  <tr>
-    <td class="tg-fymr">Ocean or beach buffer</td>
-    <td class="tg-dvpl dash_line">No</td>
-    <td class="tg-dvpl dash_line">710,742</td>
-    <td class="tg-dvpl dash_line">98%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-  <tr>
-    <td class="tg-fymr"></td>
-    <td class="tg-dvpl">Yes</td>
-    <td class="tg-dvpl">18,053</td>
-    <td class="tg-dvpl">2%</td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
+<p>Denmark introduced a policy on January 1, 2018, that imposed greater energy-efficiency restrictions for new buildings as well as tighter renovation standards for existing properties. The objective of this policy is to promote the development of energy-efficient properties and ensure that renovations made to existing properties improve overall energy performance. In this chapter, we explore whether the implementation of this policy has influenced home buyers’ perceptions of energy-efficient properties and their potential for energy efficiency.</p>
+<p>Following the empirical strategy outlined by <span class="citation" data-cites="jensen_market_2016">Jensen et al. (<a href="../references.html#ref-jensen_market_2016" role="doc-biblioref">2016</a>)</span>, we divide our sample according to the policy implementation date. Model 1 contains observations from before the policy was implemented, whereas Model 2 includes observations from after the policy was implemented. Both models represent <span class="quarto-unresolved-ref">?eq-final-regression</span>. The results are presented in <span class="quarto-unresolved-ref">?tbl-policy-effect</span>.</p>
+<p>Notably, before the implementation of the policy, label A2020 is found to have a negative but statistically insignificant effect, while labels A2010 and B are significant only at the 10% level. Additionally, label A2020, which was initially negative and statistically insignificant, gains a price premium of 6.2% compared to label D after the policy was implemented. Before the policy, the highest premium was found for properties labelled A2015, with a premium of 5.1% compared to label D. However, after the policy’s implementation, all energy-efficient labels, excluding A2015, experienced a significant increase in price premiums. The premium for label A2015 decreased, likely due to a stronger push towards higher-tier energy-efficient labels after the policy was enacted.</p>
+<p>In addition to changes in the label effects, we also observe a significant change in home buyers’ perceptions of energy sources. While some energy sources experienced only marginal changes, others exhibited more substantial shifts. For instance, compared to district heating, properties heated solely with oil or with a combination of oil and electricity were sold at average discounts of 9.3% and 10.7%, respectively, before the policy. After the policy’s implementation, these discounts increased to 12.5% and 14.8%, respectively. At the same time, the price premiums associated with green energy systems, including heat pumps, solar cells, and solar heating, declined.</p>
+<p>Overall, these results indicate that the implementation of the policy has not only shifted home buyers’ preferences towards more energy-efficient properties but also towards greater consideration of green energy sources, particularly district heating. However, this shift appears to have reduced the attention given to other green energy components, such as heat pumps, solar cells, and solar heating.</p>
+<p>The policy also significantly affected the perceived energy-efficiency potential of properties. Following the policy’s implementation, home buyers placed greater value on the energy-efficiency potential of properties, resulting in higher price premiums for properties with greater potential to improve their EPC labels. While there were some changes in the types of renovations valued by consumers, these changes were relatively minor or negligible.</p>
+<p>The results indicate that, following the implementation of the policy, home buyers’ preferences and market dynamics shifted in favour of energy efficiency. The policy coincided with a clear trend towards greater value being placed on energy-efficient properties, particularly those with higher EPC labels and greater potential for energy savings.</p>
+<!-- ADD REGRESSION TABLE HERE  -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-biazzo_general_2019" class="csl-entry" role="listitem">
-Biazzo, Indaco, Bernardo Monechi, and Vittorio Loreto. 2019. <span>“General Scores for Accessibility and Inequality Measures in Urban Areas.”</span> <em>Royal Society Open Science</em> 6 (8): 190979. <a href="https://doi.org/10.1098/rsos.190979">https://doi.org/10.1098/rsos.190979</a>.
-</div>
-<div id="ref-boliga_boliga_nodate" class="csl-entry" role="listitem">
-Boliga. n.d. <em>Boliga</em>. Accessed June 15, 2023. <a href="https://www.boliga.dk">https://www.boliga.dk</a>.
-</div>
-<div id="ref-eurostat_population_2023" class="csl-entry" role="listitem">
-Eurostat. 2023. <em>Population Density Data - <span>Eurostat</span></em>. <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/grids">https://ec.europa.eu/eurostat/web/gisco/geodata/grids</a>.
-</div>
-<div id="ref-geofabrik_gmbh_denmark_nodate" class="csl-entry" role="listitem">
-Geofabrik GmbH. n.d. <em>Denmark <span>OpenStreetMap</span> <span>Data</span></em>. Accessed November 15, 2023. <a href="https://download.geofabrik.de/europe/denmark.html">https://download.geofabrik.de/europe/denmark.html</a>.
-</div>
-<div id="ref-valhalla_developers_valhalla_nodate" class="csl-entry" role="listitem">
-Valhalla Developers. n.d. <em>Valhalla <span>Route</span> <span>Engine</span></em>. Accessed January 12, 2024. <a href="https://github.com/valhalla/valhalla?tab=readme-ov-file">https://github.com/valhalla/valhalla?tab=readme-ov-file</a>.
-</div>
-<div id="ref-wahlstrom_doing_2016" class="csl-entry" role="listitem">
-Wahlström, Marie H. 2016. <span>“Doing Good but Not That Well? <span>A</span> Dilemma for Energy Conserving Homeowners.”</span> <em>Energy Economics</em> 60 (November): 197–205. <a href="https://doi.org/10.1016/j.eneco.2016.09.025">https://doi.org/10.1016/j.eneco.2016.09.025</a>.
+<div id="ref-jensen_market_2016" class="csl-entry" role="listitem">
+Jensen, Ole Michael, Anders Rhiger Hansen, and Jesper Kragh. 2016. <span>“Market Response to the Public Display of Energy Performance Rating at Property Sales.”</span> <em>Energy Policy</em> 93 (June): 229–35. <a href="https://doi.org/10.1016/j.enpol.2016.02.029">https://doi.org/10.1016/j.enpol.2016.02.029</a>.
 </div>
 </div>
 
@@ -1144,13 +901,13 @@ Wahlström, Marie H. 2016. <span>“Doing Good but Not That Well? <span>A</span>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../quarto_files/data/data_EPC.html" class="pagination-link" aria-label="4.2 EPC Reports data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">4.2 EPC Reports data</span></span>
+      <a href="../../quarto_files/results/market_segment_property_type.html" class="pagination-link" aria-label="6.2 Market Segment: Property Type">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">6.2 Market Segment: Property Type</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../quarto_files/empirical_strategy/empirical_strategy_HedonicModel.html" class="pagination-link" aria-label="5.1 Hedonic model">
-        <span class="nav-page-text"><span class="chapter-title">5.1 Hedonic model</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../quarto_files/results/robustness_tests.html" class="pagination-link" aria-label="6.4 Robustness Tests">
+        <span class="nav-page-text"><span class="chapter-title">6.4 Robustness Tests</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
