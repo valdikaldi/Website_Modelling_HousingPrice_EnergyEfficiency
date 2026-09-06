@@ -512,17 +512,17 @@ window.Quarto = {
 
 <section id="sec-result-robustness-tests" class="level1">
 <h1>6.4 Robustness Tests</h1>
-<p>In this chapter, we assess the robustness of the main results and address potential limitations of the analysis. To do so, we conduct several alterations to the model specification and its variables. These modifications aim to evaluate the stability and reliability of our final specification, as detailed in <span class="quarto-unresolved-ref">?eq-final-regression</span>. The results are presented in <span class="quarto-unresolved-ref">?tbl-regression-robust-testing</span>, with Model 1 representing the main specification of <span class="quarto-unresolved-ref">?eq-final-regression</span>, corresponding to Model 6 in <span class="quarto-unresolved-ref">?tbl-main-results</span>.</p>
+<p>In this chapter, we assess the robustness of the main results and address potential limitations of the analysis. To do so, we conduct several alterations to the model specification and its variables. These modifications aim to evaluate the stability and reliability of our final specification, as detailed in <a href="../empirical_strategy/empirical_strategy_EstimationStrategy.html#eq-main_2" class="quarto-xref">Equation&nbsp;<span>7.2</span></a>. The results are presented in <a href="#tbl-regression-robust-testing" class="quarto-xref">Table&nbsp;<span>12.1</span></a> with Model 1 representing the main specification of <a href="../empirical_strategy/empirical_strategy_EstimationStrategy.html#eq-main_2" class="quarto-xref">Equation&nbsp;<span>7.2</span></a>, corresponding to Model 6 in <a href="main_result.html#tbl-main-results" class="quarto-xref">Table&nbsp;<span>8.1</span></a>.</p>
 <section id="outliers-and-potential-data-errors" class="level2">
 <h2 class="anchored" data-anchor-id="outliers-and-potential-data-errors">Outliers and Potential Data Errors</h2>
 <p>In Models 2 to 4, we alter the control and dependent variables by removing potential outliers and data errors to assess the robustness of our main results. In Model 2, we remove observations with sales prices greater than DKK 10 million (EUR 1.3 million). In Model 3, we exclude observations where the price per square metre is less than DKK [XX] (EUR 39) or greater than DKK 95,000 (EUR 12,350).</p>
 <p>In Model 4, we remove observations based on selected control variables. Specifically, we exclude properties where the energy source is unknown, properties with more than four bathrooms or no bathroom, properties with more than four toilets, and properties with more than seven rooms or no rooms. In Model 5, we combine all the criteria from Models 2 to 4.</p>
 <p>Across Models 2 to 5, the key variables do not appear to change substantially in terms of their signs or statistical significance. However, similar to the results found for the property-type segment, Model 5 shows that, on average, the most energy-efficient EPC label, A2020, does not appear to outperform label A2015 in terms of its price premium. This result provides further evidence of a potential non-linear relationship between energy efficiency and property prices. While energy-efficient properties are generally valued more highly than less energy-efficient properties, there appears to be a threshold beyond which additional improvements in energy efficiency do not translate into additional property value.</p>
-<p>Regarding model fit, Model 5 produces a within <span class="math inline">\(R^2\)</span> of up to 0.527, compared with 0.442 in our main specification (Model 6 in <span class="quarto-unresolved-ref">?tbl-main-results</span>). This indicates that Model 5 explains 52.7% of the variation in property prices within the fixed-effects clusters.</p>
+<p>Regarding model fit, Model 5 produces a within <span class="math inline">\(R^2\)</span> of up to 0.527, compared with 0.442 in our main specification (Model 6 in <a href="main_result.html#tbl-main-results" class="quarto-xref">Table&nbsp;<span>8.1</span></a>). This indicates that Model 5 explains 52.7% of the variation in property prices within the fixed-effects clusters.</p>
 </section>
 <section id="energy-consumption" class="level2">
 <h2 class="anchored" data-anchor-id="energy-consumption">Energy Consumption</h2>
-<p>Furthermore, we utilise the energy consumption of dwellings as an alternative measure of energy efficiency. In this specification, <span class="math inline">\(EE_i\)</span> in <span class="quarto-unresolved-ref">?eq-final-regression</span> represents the natural logarithm of the estimated annual energy consumption of dwelling <span class="math inline">\(i\)</span>, measured in kWh.</p>
+<p>Furthermore, we utilise the energy consumption of dwellings as an alternative measure of energy efficiency. In this specification, <span class="math inline">\(EE_i\)</span> in <a href="../empirical_strategy/empirical_strategy_EstimationStrategy.html#eq-main_2" class="quarto-xref">Equation&nbsp;<span>7.2</span></a> represents the natural logarithm of the estimated annual energy consumption of dwelling <span class="math inline">\(i\)</span>, measured in kWh.</p>
 <p>The purpose of using energy consumption is to assess whether the findings are consistent with those obtained using EPC labels. If a price premium is found for energy-efficient labels, where estimated energy consumption is an important determinant of these labels, one would expect energy consumption to produce similar results. Specifically, higher energy consumption should be associated with larger price discounts.</p>
 <p>However, if this is not the case, one possible explanation is that the signalling effect of EPC labels is more important to consumers than the underlying estimated energy consumption. Consumers may not necessarily expect their actual energy consumption to correspond to the amount reported in the EPC report. This argument is consistent with the findings of <span class="citation" data-cites="wahlstrom_doing_2016">Wahlström (<a href="../references.html#ref-wahlstrom_doing_2016" role="doc-biblioref">2016</a>)</span>.</p>
 <p>For this interpretation to hold, however, we must assume that the EPC labels are genuinely capturing a signalling effect rather than incorporating other potential effects, such as omitted variables or measurement errors. Alternatively, differences between the effects of EPC labels and energy consumption could indicate potential bias or measurement error in our regression.</p>
@@ -536,16 +536,2279 @@ window.Quarto = {
 <p>The results are presented in Model 7 and further complement the main findings, as well as the previous evidence regarding a potential non-linear relationship between energy efficiency and property prices. Using time on the market as an alternative outcome measure, we find that A2010 properties sell the fastest, followed by A2020 and A2015 properties. This pattern reinforces the observed non-linear relationship between energy efficiency and property prices.</p>
 <p>Model 7 shows that properties labelled A2020, A2015, and A2010 are sold, on average, 31, 24, and 34 days faster than D-labelled properties, respectively. Properties labelled B and C are sold, on average, 18 and 16 days faster than D-labelled properties. Conversely, properties labelled E, F, and G, which are less energy-efficient, take, on average, 13, 22, and 26 days longer to sell than D-labelled properties.</p>
 <p>Additionally, these results are consistent with insights provided by real estate agents, as discussed in <span class="quarto-unresolved-ref">?sec-epbd-danish-epc-scheme</span>.</p>
+<!-- Regression table 10  -->
+<div id="tbl-regression-robust-testing" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-regression-robust-testing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.1
+</figcaption>
+<div aria-describedby="tbl-regression-robust-testing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fveqqfuqmb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fveqqfuqmb table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#fveqqfuqmb thead, #fveqqfuqmb tbody, #fveqqfuqmb tfoot, #fveqqfuqmb tr, #fveqqfuqmb td, #fveqqfuqmb th {
+  border-style: none;
+}
+
+#fveqqfuqmb p {
+  margin: 0;
+  padding: 0;
+}
+
+#fveqqfuqmb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#fveqqfuqmb .gt_title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fveqqfuqmb .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fveqqfuqmb .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fveqqfuqmb .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fveqqfuqmb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fveqqfuqmb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fveqqfuqmb .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fveqqfuqmb .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#fveqqfuqmb .gt_group_heading {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#fveqqfuqmb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fveqqfuqmb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fveqqfuqmb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fveqqfuqmb .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fveqqfuqmb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fveqqfuqmb .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#fveqqfuqmb .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#fveqqfuqmb .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#fveqqfuqmb .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fveqqfuqmb .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#fveqqfuqmb .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fveqqfuqmb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fveqqfuqmb .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fveqqfuqmb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fveqqfuqmb .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fveqqfuqmb .gt_left {
+  text-align: left;
+}
+
+#fveqqfuqmb .gt_center {
+  text-align: center;
+}
+
+#fveqqfuqmb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fveqqfuqmb .gt_font_normal {
+  font-weight: normal;
+}
+
+#fveqqfuqmb .gt_font_bold {
+  font-weight: bold;
+}
+
+#fveqqfuqmb .gt_font_italic {
+  font-style: italic;
+}
+
+#fveqqfuqmb .gt_super {
+  font-size: 65%;
+}
+
+#fveqqfuqmb .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#fveqqfuqmb .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#fveqqfuqmb .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#fveqqfuqmb .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#fveqqfuqmb .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#fveqqfuqmb .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#fveqqfuqmb .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#fveqqfuqmb .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#fveqqfuqmb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="gt_heading header">
+<td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>Robustness Testing</strong></td>
+</tr>
+<tr class="gt_col_headings gt_spanner_row even">
+<th rowspan="2" id="variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th colspan="7" id="**Dependent variables**" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+<strong>Dependent variables</strong>
+</div></th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="col1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(1) Ln(Price)</th>
+<th id="col2" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(2) Ln(Price)</th>
+<th id="col3" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(3) Ln(Price)</th>
+<th id="col4" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(4) Ln(Price)</th>
+<th id="col5" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(5) Ln(Price)</th>
+<th id="col6" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(6) Ln(Price)</th>
+<th id="col7" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(7) Advertisement Duration</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<th colspan="8" class="gt_empty_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-style: italic; font-weight: bold; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: black" scope="colgroup"></th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="  variable">Log(Total heating demand in kWh)</td>
+<td class="gt_row gt_left" headers="  col1" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="  col2" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="  col3" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="  col4" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="  col5" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="  col6" style="font-weight: bold">-0.097***</td>
+<td class="gt_row gt_left" headers="  col7" style="font-weight: bold"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable"></td>
+<td class="gt_row gt_left" headers="  col1"></td>
+<td class="gt_row gt_left" headers="  col2"></td>
+<td class="gt_row gt_left" headers="  col3"></td>
+<td class="gt_row gt_left" headers="  col4"></td>
+<td class="gt_row gt_left" headers="  col5"></td>
+<td class="gt_row gt_left" headers="  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="  col7"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable" style="font-weight: bold">R²</td>
+<td class="gt_row gt_left" headers="  col1" style="font-weight: bold">0.7571</td>
+<td class="gt_row gt_left" headers="  col2" style="font-weight: bold">0.7702</td>
+<td class="gt_row gt_left" headers="  col3" style="font-weight: bold">0.8025</td>
+<td class="gt_row gt_left" headers="  col4" style="font-weight: bold">0.7580</td>
+<td class="gt_row gt_left" headers="  col5" style="font-weight: bold">0.8013</td>
+<td class="gt_row gt_left" headers="  col6" style="font-weight: bold">0.7657</td>
+<td class="gt_row gt_left" headers="  col7" style="font-weight: bold">0.3511</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable" style="font-weight: bold">R² Adjusted</td>
+<td class="gt_row gt_left" headers="  col1" style="font-weight: bold">0.7156</td>
+<td class="gt_row gt_left" headers="  col2" style="font-weight: bold">0.7303</td>
+<td class="gt_row gt_left" headers="  col3" style="font-weight: bold">0.7678</td>
+<td class="gt_row gt_left" headers="  col4" style="font-weight: bold">0.7154</td>
+<td class="gt_row gt_left" headers="  col5" style="font-weight: bold">0.7652</td>
+<td class="gt_row gt_left" headers="  col6" style="font-weight: bold">0.7186</td>
+<td class="gt_row gt_left" headers="  col7" style="font-weight: bold">0.2146</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable" style="font-weight: bold">R² Within Adjusted</td>
+<td class="gt_row gt_left" headers="  col1" style="font-weight: bold">0.4420</td>
+<td class="gt_row gt_left" headers="  col2" style="font-weight: bold">0.4726</td>
+<td class="gt_row gt_left" headers="  col3" style="font-weight: bold">0.5358</td>
+<td class="gt_row gt_left" headers="  col4" style="font-weight: bold">0.4367</td>
+<td class="gt_row gt_left" headers="  col5" style="font-weight: bold">0.5277</td>
+<td class="gt_row gt_left" headers="  col6" style="font-weight: bold">0.4345</td>
+<td class="gt_row gt_left" headers="  col7" style="font-weight: bold">0.0356</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable">RMSE</td>
+<td class="gt_row gt_left" headers="  col1">0.3803</td>
+<td class="gt_row gt_left" headers="  col2">0.3454</td>
+<td class="gt_row gt_left" headers="  col3">0.3195</td>
+<td class="gt_row gt_left" headers="  col4">0.3763</td>
+<td class="gt_row gt_left" headers="  col5">0.3136</td>
+<td class="gt_row gt_left" headers="  col6">0.3687</td>
+<td class="gt_row gt_left" headers="  col7">162.4148</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable">Number of Observations</td>
+<td class="gt_row gt_left" headers="  col1">728,794</td>
+<td class="gt_row gt_left" headers="  col2">716,057</td>
+<td class="gt_row gt_left" headers="  col3">710,593</td>
+<td class="gt_row gt_left" headers="  col4">694,670</td>
+<td class="gt_row gt_left" headers="  col5">675,477</td>
+<td class="gt_row gt_left" headers="  col6">582,690</td>
+<td class="gt_row gt_left" headers="  col7">570,282</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable">Property characteristics controls</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable">Property quality controls</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable">Geographical controls</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable">Time Fixed effects (Month and Year)</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable">Place Fixed effects (4-digit postal code)</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable">Time × Place Fixed effect</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="8" id="Current Energy label: D as a reference category" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-style: italic; font-weight: bold; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: black" scope="colgroup">Current Energy label: D as a reference category</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable">EPC label A2020</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1" style="font-weight: bold">0.074***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2" style="font-weight: bold">0.069***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3" style="font-weight: bold">0.066***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4" style="font-weight: bold">0.071***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5" style="font-weight: bold">0.062***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7" style="font-weight: bold">-30.693***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1">(0.009)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2">(0.008)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3">(0.007)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4">(0.009)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5">(0.007)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7">(4.161)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable">EPC label 2015</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1" style="font-weight: bold">0.062***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2" style="font-weight: bold">0.070***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3" style="font-weight: bold">0.067***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4" style="font-weight: bold">0.061***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5" style="font-weight: bold">0.067***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7" style="font-weight: bold">-23.828***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1">(0.007)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2">(0.006)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3">(0.006)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4">(0.007)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5">(0.006)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7">(3.048)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable">EPC label 2010</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1" style="font-weight: bold">0.026***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2" style="font-weight: bold">0.030***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3" style="font-weight: bold">0.037***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4" style="font-weight: bold">0.024***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5" style="font-weight: bold">0.036***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7" style="font-weight: bold">-33.997***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7">(2.152)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable">EPC label B</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1" style="font-weight: bold">0.022***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2" style="font-weight: bold">0.022***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3" style="font-weight: bold">0.026***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4" style="font-weight: bold">0.020***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5" style="font-weight: bold">0.025***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7" style="font-weight: bold">-18.149***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1">(0.003)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4">(0.003)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7">(1.306)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable">EPC label C</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1" style="font-weight: bold">0.020***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2" style="font-weight: bold">0.024***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3" style="font-weight: bold">0.027***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4" style="font-weight: bold">0.020***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5" style="font-weight: bold">0.028***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7" style="font-weight: bold">-14.604***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7">(0.743)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable">EPC label E</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1" style="font-weight: bold">-0.060***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2" style="font-weight: bold">-0.060***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3" style="font-weight: bold">-0.057***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4" style="font-weight: bold">-0.060***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5" style="font-weight: bold">-0.057***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7" style="font-weight: bold">13.212***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7">(0.909)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable">EPC label F</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1" style="font-weight: bold">-0.118***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2" style="font-weight: bold">-0.117***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3" style="font-weight: bold">-0.118***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4" style="font-weight: bold">-0.114***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5" style="font-weight: bold">-0.116***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7" style="font-weight: bold">22.218***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1">(0.003)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2">(0.003)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4">(0.003)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5">(0.003)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7">(1.426)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable">EPC label G</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1" style="font-weight: bold">-0.252***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2" style="font-weight: bold">-0.245***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3" style="font-weight: bold">-0.239***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4" style="font-weight: bold">-0.246***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5" style="font-weight: bold">-0.236***</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7" style="font-weight: bold">25.901***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  variable"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col1">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col2">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col3">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col4">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col5">(0.004)</td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col6"></td>
+<td class="gt_row gt_left" headers="Current Energy label: D as a reference category  col7">(2.189)</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<th colspan="8" id="Energy source: with District heating as reference category" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-style: italic; font-weight: bold; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: black" scope="colgroup">Energy source: with District heating as reference category</th>
+</tr>
+<tr class="gt_row_group_first odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Natural Gas</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">-0.026***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">-0.031***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.034***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">-0.026***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">-0.034***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.047***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">19.794***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.002)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(1.372)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Oil</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">-0.101***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">-0.107***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.112***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">-0.101***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">-0.111***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.143***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">39.084***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.005)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(2.185)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Wood and District heating</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">-0.016</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">-0.016</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.005</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">-0.011</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">0.001</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.039**</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">26.679***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.011)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.010)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.010)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.012)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.010)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.019)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(7.633)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Wood pellets</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">-0.006</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">0.002</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.006</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">-0.004</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">-0.001</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.027***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">4.254</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.007)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.007)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.008)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(3.852)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Wood and electricity</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">0.007</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">-0.005</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.009**</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">0.010**</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">-0.006</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.085***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">26.970***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.005)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.005)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(2.578)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Electricity and Wood pellets</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">-0.034***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">-0.033***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.038***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">-0.035***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">-0.037***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.070***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">9.913***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.005)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.007)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(3.234)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Electricity and District heating</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">0.053***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">0.043***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">0.041***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">0.054***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">0.042***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">0.050***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">8.677***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(1.690)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Electricity and Natural gas</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">-0.021***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">-0.028***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.030***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">-0.020***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">-0.029***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.057***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">27.378***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.005)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(2.242)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Electricity</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">0.019***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">0.008***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">0.003</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">0.017***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">0.003</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.097***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">21.111***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.003)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(1.684)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Wood</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">-0.029**</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">-0.029**</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.041***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">-0.026**</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">-0.035***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.094***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">40.707***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.012)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.012)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.011)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.013)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.012)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.017)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(8.511)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Unknown</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">0.008</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">0.010**</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">0.006</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">3.693</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.005)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.005)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.004)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(3.204)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Other source combination</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">-0.028***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">-0.031***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.036***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">-0.028***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">-0.035***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.087***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">26.002***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.008)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.007)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.007)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.008)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.008)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.010)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(4.274)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable">Electricity and Oil</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1" style="font-weight: bold">-0.122***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2" style="font-weight: bold">-0.126***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3" style="font-weight: bold">-0.128***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4" style="font-weight: bold">-0.123***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5" style="font-weight: bold">-0.130***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6" style="font-weight: bold">-0.182***</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7" style="font-weight: bold">40.534***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col1">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col2">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col3">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col4">(0.007)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col5">(0.006)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col6">(0.007)</td>
+<td class="gt_row gt_left" headers="Energy source: with District heating as reference category  col7">(3.490)</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="8" id="Green Energy systems" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-style: italic; font-weight: bold; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: black" scope="colgroup">Green Energy systems</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Green Energy systems  variable">Heat pump</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1" style="font-weight: bold">0.007***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2" style="font-weight: bold">0.008***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3" style="font-weight: bold">0.004***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4" style="font-weight: bold">0.008***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5" style="font-weight: bold">0.004***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6" style="font-weight: bold">0.017***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7" style="font-weight: bold">-5.651***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Green Energy systems  variable"></td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7">(0.762)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Green Energy systems  variable">Solar-cells</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1" style="font-weight: bold">0.033***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2" style="font-weight: bold">0.029***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3" style="font-weight: bold">0.023***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4" style="font-weight: bold">0.032***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5" style="font-weight: bold">0.023***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6" style="font-weight: bold">0.032***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7" style="font-weight: bold">-3.365***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Green Energy systems  variable"></td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7">(0.942)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Green Energy systems  variable">Solar-heating</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1" style="font-weight: bold">0.019***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2" style="font-weight: bold">0.014***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3" style="font-weight: bold">0.013***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4" style="font-weight: bold">0.018***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5" style="font-weight: bold">0.012***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6" style="font-weight: bold">0.020***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7" style="font-weight: bold">-2.632***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Green Energy systems  variable"></td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7">(0.952)</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<th colspan="8" id="Renovation costs and benefits" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-style: italic; font-weight: bold; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: black" scope="colgroup">Renovation costs and benefits</th>
+</tr>
+<tr class="gt_row_group_first odd">
+<td class="gt_row gt_left" headers="Renovation costs and benefits  variable">log(TICP + 1)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col1" style="font-weight: bold">-0.001***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col2" style="font-weight: bold">-0.001***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col3" style="font-weight: bold">-0.001***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col4" style="font-weight: bold">-0.001***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col5" style="font-weight: bold">-0.001***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col6" style="font-weight: bold">-0.002***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col7" style="font-weight: bold">0.650***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Renovation costs and benefits  variable"></td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col1">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col2">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col3">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col4">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col5">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col6">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col7">(0.084)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Renovation costs and benefits  variable">log(TECS + 1)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col1" style="font-weight: bold">-0.007***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col2" style="font-weight: bold">-0.008***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col3" style="font-weight: bold">-0.007***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col4" style="font-weight: bold">-0.007***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col5" style="font-weight: bold">-0.007***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col6" style="font-weight: bold">-0.005***</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col7" style="font-weight: bold">-0.383**</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Renovation costs and benefits  variable"></td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col1">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col2">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col3">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col4">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col5">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col6">(0.000)</td>
+<td class="gt_row gt_left" headers="Renovation costs and benefits  col7">(0.185)</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="8" id="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-style: italic; font-weight: bold; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: black" scope="colgroup">Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable">Jump up by 1 label</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1" style="font-weight: bold">0.004**</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2" style="font-weight: bold">0.011***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3" style="font-weight: bold">0.016***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4" style="font-weight: bold">0.004***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5" style="font-weight: bold">0.017***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6" style="font-weight: bold">0.002</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7" style="font-weight: bold">-24.556***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7">(0.826)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable">Jump up by 2 labels</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1" style="font-weight: bold">0.023***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2" style="font-weight: bold">0.029***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3" style="font-weight: bold">0.026***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4" style="font-weight: bold">0.023***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5" style="font-weight: bold">0.026***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6" style="font-weight: bold">0.010***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7" style="font-weight: bold">-28.811***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7">(1.005)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable">Jump up by 3 labels</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1" style="font-weight: bold">0.036***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2" style="font-weight: bold">0.034***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3" style="font-weight: bold">0.029***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4" style="font-weight: bold">0.037***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5" style="font-weight: bold">0.030***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6" style="font-weight: bold">0.003</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7" style="font-weight: bold">-35.910***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1">(0.003)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4">(0.003)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5">(0.002)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6">(0.003)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7">(1.329)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable">Jump up by 4 labels</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1" style="font-weight: bold">0.026***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2" style="font-weight: bold">0.026***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3" style="font-weight: bold">0.020***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4" style="font-weight: bold">0.026***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5" style="font-weight: bold">0.020***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6" style="font-weight: bold">-0.024***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7" style="font-weight: bold">-37.616***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1">(0.003)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2">(0.003)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3">(0.003)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4">(0.004)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5">(0.003)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6">(0.004)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7">(1.785)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable">Jump up by 5 labels</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1" style="font-weight: bold">0.019***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2" style="font-weight: bold">0.025***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3" style="font-weight: bold">0.013***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4" style="font-weight: bold">0.020***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5" style="font-weight: bold">0.014***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6" style="font-weight: bold">-0.033***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7" style="font-weight: bold">-44.479***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1">(0.005)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2">(0.005)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3">(0.004)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4">(0.005)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5">(0.004)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6">(0.005)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7">(2.419)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable">Jump up by 6 labels</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1" style="font-weight: bold">-0.014*</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2" style="font-weight: bold">-0.007</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3" style="font-weight: bold">-0.014**</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4" style="font-weight: bold">-0.015*</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5" style="font-weight: bold">-0.014**</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6" style="font-weight: bold">-0.084***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7" style="font-weight: bold">-48.798***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1">(0.007)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2">(0.007)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3">(0.007)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4">(0.008)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5">(0.007)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6">(0.008)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7">(3.842)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable">Jump up by 7 labels</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1" style="font-weight: bold">-0.012</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2" style="font-weight: bold">-0.004</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3" style="font-weight: bold">-0.011</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4" style="font-weight: bold">-0.011</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5" style="font-weight: bold">-0.013</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6" style="font-weight: bold">-0.086***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7" style="font-weight: bold">-56.404***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1">(0.013)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2">(0.013)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3">(0.013)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4">(0.014)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5">(0.013)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6">(0.015)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7">(6.782)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable">Jump up by 8 labels</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1" style="font-weight: bold">-0.062***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2" style="font-weight: bold">-0.072***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3" style="font-weight: bold">-0.073***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4" style="font-weight: bold">-0.063***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5" style="font-weight: bold">-0.074***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6" style="font-weight: bold">-0.227***</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7" style="font-weight: bold">-49.523***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  variable"></td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col1">(0.019)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col2">(0.019)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col3">(0.019)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col4">(0.020)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col5">(0.019)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col6">(0.021)</td>
+<td class="gt_row gt_left" headers="Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category  col7">(11.120)</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<th colspan="8" id="Type of renovations needed" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-style: italic; font-weight: bold; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: black" scope="colgroup">Type of renovations needed</th>
+</tr>
+<tr class="gt_row_group_first odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Roof and attic renovation</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">-0.020***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">-0.021***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">-0.024***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">-0.020***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">-0.023***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">-0.024***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">6.494***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(0.622)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Walls renovation</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">-0.006***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">-0.005***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">-0.006***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">-0.006***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">-0.006***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">-0.007***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">3.954***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(0.688)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Install Solar-cells</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">0.004***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">0.003***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">0.001</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">0.005***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">0.002</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">0.012***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">-7.355***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(0.692)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Heating system renovation</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">-0.016***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">-0.009***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">-0.008***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">-0.015***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">-0.007***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">-0.021***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">2.070***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(0.646)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Water system renovation</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">0.005***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">-0.002</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">-0.002*</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">0.004**</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">-0.003**</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">0.000</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">0.927</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(0.746)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Floor renovation</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">-0.044***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">-0.039***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">-0.033***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">-0.043***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">-0.031***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">-0.052***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">-2.682***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(0.678)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Window and door renovation</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">-0.054***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">-0.053***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">-0.056***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">-0.052***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">-0.053***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">-0.057***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">0.601</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(0.723)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Install heatpumps</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">-0.009***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">-0.007***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">-0.003*</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">-0.009***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">-0.004*</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">0.005**</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">-3.493***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(1.096)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Other renovations</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">-0.025***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">-0.020***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">-0.016***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">-0.024***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">-0.015***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">-0.021***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">-4.027***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(0.631)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Install solar-heating</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">0.001</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">0.001</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">0.000</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">0.001</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">0.001</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">-0.002</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">4.014***</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.001)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(0.857)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Ventilation renovation</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">-0.006</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">-0.007**</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">-0.008***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">-0.005</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">-0.007**</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">-0.009**</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">3.422**</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.004)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.003)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.003)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.004)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.003)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.004)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(1.634)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable">Install District heating</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1" style="font-weight: bold">0.069***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2" style="font-weight: bold">0.073***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3" style="font-weight: bold">0.051***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4" style="font-weight: bold">0.066***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5" style="font-weight: bold">0.046***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6" style="font-weight: bold">0.060***</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7" style="font-weight: bold">-3.015</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Type of renovations needed  variable"></td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col1">(0.009)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col2">(0.009)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col3">(0.008)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col4">(0.009)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col5">(0.008)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col6">(0.010)</td>
+<td class="gt_row gt_left" headers="Type of renovations needed  col7">(3.747)</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="8" class="gt_sourcenote">Heteroscedasticity-robust standard errors in parentheses. Indicators of significance level: * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01. Dependent variable: Natural logarithm of transaction price. TICP - Total investments cost for profitable renovations. TECS - Total energy cost saved from all renovations. Models 1 to 5 are in line with Equation ref{eq:finalRegression}. In Model 6 we switch EPC labels for the natural logarithm of total heating demand in kWh and in Model 7 we set the dependent variable to the number of days the property was advertised.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
 </section>
 <section id="robustness-of-text-classification" class="level2">
 <h2 class="anchored" data-anchor-id="robustness-of-text-classification">Robustness of Text Classification</h2>
-<p>Finally, we assess the robustness of the observed price premiums associated with solar heating, solar cells, and heat pumps, as reported in the main results (Model 6 in <span class="quarto-unresolved-ref">?tbl-main-results</span>). We do this by estimating multiple models based on <span class="quarto-unresolved-ref">?eq-final-regression</span> while continuously increasing the probability threshold used to classify the three variables.</p>
-<p>The findings are presented in <span class="quarto-unresolved-ref">?tbl-robust-test-text-classification</span>. As before, Model 1 represents the main specification, using an 85% probability threshold for all three variables. For Models 2 through 7, the probability thresholds are increased to 90%, 95%, 96%, 97%, 98%, and 99%, respectively.</p>
+<p>Finally, we assess the robustness of the observed price premiums associated with solar heating, solar cells, and heat pumps, as reported in the main results (Model 6 in <a href="main_result.html#tbl-main-results" class="quarto-xref">Table&nbsp;<span>8.1</span></a>). We do this by estimating multiple models based on <a href="../empirical_strategy/empirical_strategy_EstimationStrategy.html#eq-main_2" class="quarto-xref">Equation&nbsp;<span>7.2</span></a> while continuously increasing the probability threshold used to classify the three variables.</p>
+<p>The findings are presented in <a href="#tbl-robust-test-text-classification" class="quarto-xref">Table&nbsp;<span>12.2</span></a>. As before, Model 1 represents the main specification, using an 85% probability threshold for all three variables. For Models 2 through 7, the probability thresholds are increased to 90%, 95%, 96%, 97%, 98%, and 99%, respectively.</p>
 <p>For solar heating and solar cells, the coefficients are relatively stable, with only minor changes, and remain statistically significant at the 1% level across all specifications.</p>
 <p>Interestingly, as the probability threshold for solar cells increases, the estimated price premium also increases, ranging from 3.35% to 4.48%. In contrast, the price premium associated with solar heating decreases as the probability threshold increases, ranging from 1.0% to 1.9%.</p>
 <p>For heat pumps, the statistical significance changes from the 1% level in Model 1 to the 5% level for probability thresholds between 95% and 97%, before returning to the 1% level at the 98% and 99% thresholds. However, the estimated coefficient for heat pumps changes only marginally, ranging from 0.40% to 0.72%.</p>
 <p>Moreover, the coefficients of the other key variables and control variables do not appear to change substantially as the probability threshold increases. It is worth noting that although increasing the probability threshold improves the precision of the classification by reducing the number of false-positive observations, this comes at the potential cost of increasing the number of false-negative observations.</p>
 <p>Nevertheless, regardless of the probability threshold applied, all three components have a positive estimated effect on property prices. However, the relatively small and less stable coefficient for heat pumps suggests that home buyers may place less value on heat pumps compared with solar cells and solar heating.</p>
+<!-- Regression table 11  -->
+<div id="tbl-robust-test-text-classification" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-robust-test-text-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.2
+</figcaption>
+<div aria-describedby="tbl-robust-test-text-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div id="wmjhnnyfwd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wmjhnnyfwd table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wmjhnnyfwd thead, #wmjhnnyfwd tbody, #wmjhnnyfwd tfoot, #wmjhnnyfwd tr, #wmjhnnyfwd td, #wmjhnnyfwd th {
+  border-style: none;
+}
+
+#wmjhnnyfwd p {
+  margin: 0;
+  padding: 0;
+}
+
+#wmjhnnyfwd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wmjhnnyfwd .gt_title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wmjhnnyfwd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wmjhnnyfwd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wmjhnnyfwd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wmjhnnyfwd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wmjhnnyfwd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wmjhnnyfwd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wmjhnnyfwd .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wmjhnnyfwd .gt_group_heading {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wmjhnnyfwd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wmjhnnyfwd .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wmjhnnyfwd .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wmjhnnyfwd .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wmjhnnyfwd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wmjhnnyfwd .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wmjhnnyfwd .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wmjhnnyfwd .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wmjhnnyfwd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wmjhnnyfwd .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wmjhnnyfwd .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wmjhnnyfwd .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wmjhnnyfwd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wmjhnnyfwd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wmjhnnyfwd .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wmjhnnyfwd .gt_left {
+  text-align: left;
+}
+
+#wmjhnnyfwd .gt_center {
+  text-align: center;
+}
+
+#wmjhnnyfwd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wmjhnnyfwd .gt_font_normal {
+  font-weight: normal;
+}
+
+#wmjhnnyfwd .gt_font_bold {
+  font-weight: bold;
+}
+
+#wmjhnnyfwd .gt_font_italic {
+  font-style: italic;
+}
+
+#wmjhnnyfwd .gt_super {
+  font-size: 65%;
+}
+
+#wmjhnnyfwd .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wmjhnnyfwd .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wmjhnnyfwd .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wmjhnnyfwd .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wmjhnnyfwd .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wmjhnnyfwd .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wmjhnnyfwd .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#wmjhnnyfwd .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wmjhnnyfwd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="gt_heading header">
+<td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>Robustness Test - Text Classification</strong></td>
+</tr>
+<tr class="gt_col_headings gt_spanner_row even">
+<th class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="col"></th>
+<th colspan="7" id="**Threshold**" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+<strong>Threshold</strong>
+</div></th>
+</tr>
+<tr class="gt_col_headings gt_spanner_row header">
+<th rowspan="2" id="variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th colspan="7" id="**Dependent variables: Ln(Price)**" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+<strong>Dependent variables: Ln(Price)</strong>
+</div></th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="col1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(1)&lt;br&gt;85%</th>
+<th id="col2" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(2)&lt;br&gt;90%</th>
+<th id="col3" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(3)&lt;br&gt;95%</th>
+<th id="col4" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(4)&lt;br&gt;96%</th>
+<th id="col5" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(5)&lt;br&gt;97%</th>
+<th id="col6" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(6)&lt;br&gt;98%</th>
+<th id="col7" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">(7)&lt;br&gt;99%</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<th colspan="8" id="Green Energy systems" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-style: italic; font-weight: bold; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: black" scope="colgroup">Green Energy systems</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Green Energy systems  variable">Heat pump</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1" style="font-weight: bold">0.007***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2" style="font-weight: bold">0.004**</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3" style="font-weight: bold">0.004**</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4" style="font-weight: bold">0.004**</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5" style="font-weight: bold">0.004**</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6" style="font-weight: bold">0.005***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7" style="font-weight: bold">0.007***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Green Energy systems  variable"></td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7">(0.002)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Green Energy systems  variable">Solar-cells</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1" style="font-weight: bold">0.033***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2" style="font-weight: bold">0.041***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3" style="font-weight: bold">0.042***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4" style="font-weight: bold">0.042***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5" style="font-weight: bold">0.043***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6" style="font-weight: bold">0.047***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7" style="font-weight: bold">0.047***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Green Energy systems  variable"></td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3">(0.003)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4">(0.003)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5">(0.003)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6">(0.003)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7">(0.003)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Green Energy systems  variable">Solar-heating</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1" style="font-weight: bold">0.019***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2" style="font-weight: bold">0.018***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3" style="font-weight: bold">0.013***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4" style="font-weight: bold">0.014***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5" style="font-weight: bold">0.014***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6" style="font-weight: bold">0.011***</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7" style="font-weight: bold">0.010***</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Green Energy systems  variable"></td>
+<td class="gt_row gt_left" headers="Green Energy systems  col1">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col2">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col3">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col4">(0.002)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col5">(0.003)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col6">(0.003)</td>
+<td class="gt_row gt_left" headers="Green Energy systems  col7">(0.003)</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<th colspan="8" class="gt_empty_group_heading" data-quarto-table-cell-role="th" style="font-size: 14px; font-style: italic; font-weight: bold; border-bottom-width: 1.5px; border-bottom-style: solid; border-bottom-color: black" scope="colgroup"></th>
+</tr>
+<tr class="gt_row_group_first odd">
+<td class="gt_row gt_left" headers="  variable" style="font-weight: bold">R²</td>
+<td class="gt_row gt_left" headers="  col1" style="font-weight: bold">0.7571</td>
+<td class="gt_row gt_left" headers="  col2" style="font-weight: bold">0.7571</td>
+<td class="gt_row gt_left" headers="  col3" style="font-weight: bold">0.7570</td>
+<td class="gt_row gt_left" headers="  col4" style="font-weight: bold">0.7570</td>
+<td class="gt_row gt_left" headers="  col5" style="font-weight: bold">0.7570</td>
+<td class="gt_row gt_left" headers="  col6" style="font-weight: bold">0.7570</td>
+<td class="gt_row gt_left" headers="  col7" style="font-weight: bold">0.7570</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable" style="font-weight: bold">R² Adjusted</td>
+<td class="gt_row gt_left" headers="  col1" style="font-weight: bold">0.7156</td>
+<td class="gt_row gt_left" headers="  col2" style="font-weight: bold">0.7156</td>
+<td class="gt_row gt_left" headers="  col3" style="font-weight: bold">0.7156</td>
+<td class="gt_row gt_left" headers="  col4" style="font-weight: bold">0.7155</td>
+<td class="gt_row gt_left" headers="  col5" style="font-weight: bold">0.7155</td>
+<td class="gt_row gt_left" headers="  col6" style="font-weight: bold">0.7155</td>
+<td class="gt_row gt_left" headers="  col7" style="font-weight: bold">0.7155</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable" style="font-weight: bold">R² Within Adjusted</td>
+<td class="gt_row gt_left" headers="  col1" style="font-weight: bold">0.4420</td>
+<td class="gt_row gt_left" headers="  col2" style="font-weight: bold">0.4420</td>
+<td class="gt_row gt_left" headers="  col3" style="font-weight: bold">0.4419</td>
+<td class="gt_row gt_left" headers="  col4" style="font-weight: bold">0.4419</td>
+<td class="gt_row gt_left" headers="  col5" style="font-weight: bold">0.4419</td>
+<td class="gt_row gt_left" headers="  col6" style="font-weight: bold">0.4419</td>
+<td class="gt_row gt_left" headers="  col7" style="font-weight: bold">0.4419</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable">RMSE</td>
+<td class="gt_row gt_left" headers="  col1">0.3803</td>
+<td class="gt_row gt_left" headers="  col2">0.3803</td>
+<td class="gt_row gt_left" headers="  col3">0.3803</td>
+<td class="gt_row gt_left" headers="  col4">0.3803</td>
+<td class="gt_row gt_left" headers="  col5">0.3803</td>
+<td class="gt_row gt_left" headers="  col6">0.3803</td>
+<td class="gt_row gt_left" headers="  col7">0.3804</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable">Number of Observations</td>
+<td class="gt_row gt_left" headers="  col1">728,794</td>
+<td class="gt_row gt_left" headers="  col2">728,794</td>
+<td class="gt_row gt_left" headers="  col3">728,795</td>
+<td class="gt_row gt_left" headers="  col4">728,795</td>
+<td class="gt_row gt_left" headers="  col5">728,794</td>
+<td class="gt_row gt_left" headers="  col6">728,794</td>
+<td class="gt_row gt_left" headers="  col7">728,794</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable">Property characteristics controls</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable">Property quality controls</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable">Geographical controls</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable">Time Fixed effects (Month and Year)</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="  variable">Place Fixed effects (4-digit postal code)</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="  variable">Time × Place Fixed effect</td>
+<td class="gt_row gt_left" headers="  col1"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col2"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col3"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col4"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col5"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col6"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+<td class="gt_row gt_left" headers="  col7"><span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span></td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="8" class="gt_sourcenote">Heteroscedasticity-robust standard errors in parentheses. Indicators of significance level: * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01. Dependent variable: Natural logarithm of transaction price. TICP - Total investments cost for profitable renovations. TECS - Total energy cost saved from all renovations.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
