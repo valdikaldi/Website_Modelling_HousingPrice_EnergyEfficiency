@@ -10,14 +10,10 @@ title: "Appendix"
 
 # A. Literature Overview
 
-
 # B. Calorific Values
-
 
 # C. Text Classification models: All training results
 
-
 # D. Results - additional Information
-
 
 # E. Additional figures

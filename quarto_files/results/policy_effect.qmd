@@ -6,7 +6,7 @@
 
 Denmark introduced a policy on January 1, 2018, that imposed greater energy-efficiency restrictions for new buildings as well as tighter renovation standards for existing properties. The objective of this policy is to promote the development of energy-efficient properties and ensure that renovations made to existing properties improve overall energy performance. In this chapter, we explore whether the implementation of this policy has influenced home buyers' perceptions of energy-efficient properties and their potential for energy efficiency.
 
-Following the empirical strategy outlined by @jensen_market_2016, we divide our sample according to the policy implementation date. Model 1 contains observations from before the policy was implemented, whereas Model 2 includes observations from after the policy was implemented. Both models represent @eq-final-regression. The results are presented in @tbl-policy-effect.
+Following the empirical strategy outlined by @jensen_market_2016, we divide our sample according to the policy implementation date. Model 1 contains observations from before the policy was implemented, whereas Model 2 includes observations from after the policy was implemented. Both models represent @eq-main_2. The results are presented in @tbl-policy-effect.
 
 Notably, before the implementation of the policy, label A2020 is found to have a negative but statistically insignificant effect, while labels A2010 and B are significant only at the 10% level. Additionally, label A2020, which was initially negative and statistically insignificant, gains a price premium of 6.2% compared to label D after the policy was implemented. Before the policy, the highest premium was found for properties labelled A2015, with a premium of 5.1% compared to label D. However, after the policy's implementation, all energy-efficient labels, excluding A2015, experienced a significant increase in price premiums. The premium for label A2015 decreased, likely due to a stronger push towards higher-tier energy-efficient labels after the policy was enacted.
 
@@ -18,6 +18,331 @@ The policy also significantly affected the perceived energy-efficiency potential
 
 The results indicate that, following the implementation of the policy, home buyers' preferences and market dynamics shifted in favour of energy efficiency. The policy coincided with a clear trend towards greater value being placed on energy-efficient properties, particularly those with higher EPC labels and greater potential for energy savings.
 
-
-
 <!-- ADD REGRESSION TABLE HERE  -->
+
+::: {#tbl-policy-effect}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# Load required libraries
+library(gt)
+library(dplyr)
+
+# Function to create the policy effect table
+create_policy_table <- function() {
+  
+  # Initialize empty dataframe
+  df <- data.frame(
+    section = character(),
+    variable = character(),
+    col1 = character(),
+    col2 = character(),
+    stringsAsFactors = FALSE
+  )
+  
+  # ============================================================
+  # SECTION 1: Current Energy label (D as reference)
+  # ============================================================
+  
+  energy_labels <- data.frame(
+    section = rep("Current Energy label: D as a reference category", 16),
+    variable = c(
+      "EPC label A2020", "", 
+      "EPC label 2015", "",
+      "EPC label 2010", "",
+      "EPC label B", "",
+      "EPC label C", "",
+      "EPC label E", "",
+      "EPC label F", "",
+      "EPC label G", ""
+    ),
+    col1 = c("-0.031", "(0.023)", "0.050***", "(0.013)", "0.012*", "(0.007)",
+             "0.007*", "(0.004)", "0.005**", "(0.002)", "-0.062***", "(0.002)",
+             "-0.122***", "(0.004)", "-0.270***", "(0.005)"),
+    col2 = c("0.060***", "(0.010)", "0.033***", "(0.008)", "0.025***", "(0.005)",
+             "0.027***", "(0.003)", "0.030***", "(0.002)", "-0.060***", "(0.003)",
+             "-0.123***", "(0.005)", "-0.240***", "(0.007)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, energy_labels)
+  
+  # ============================================================
+  # SECTION 2: Energy source
+  # ============================================================
+  
+  energy_source <- data.frame(
+    section = rep("Energy source: with District heating as reference category", 26),
+    variable = c(
+      "Natural Gas", "",
+      "Oil", "",
+      "Wood and District heating", "",
+      "Wood pellets", "",
+      "Wood and electricity", "",
+      "Electricity and Wood pellets", "",
+      "Electricity and District heating", "",
+      "Electricity and Natural gas", "",
+      "Electricity", "",
+      "Wood", "",
+      "Unknown", "",
+      "Other source combination", "",
+      "Electricity and Oil", ""
+    ),
+    col1 = c("-0.021***", "(0.003)", "-0.089***", "(0.005)", "-0.021", "(0.014)",
+             "0.013", "(0.011)", "0.020***", "(0.007)", "0.033***", "(0.011)",
+             "0.061***", "(0.006)", "-0.003", "(0.006)", "0.021***", "(0.005)",
+             "-0.028", "(0.018)", "0.023***", "(0.008)", "-0.011", "(0.011)",
+             "-0.102***", "(0.009)"),
+    col2 = c("-0.028***", "(0.004)", "-0.118***", "(0.006)", "-0.012", "(0.019)",
+             "-0.012", "(0.008)", "-0.008", "(0.006)", "-0.051***", "(0.007)",
+             "0.046***", "(0.004)", "-0.030***", "(0.006)", "0.014***", "(0.004)",
+             "-0.023", "(0.017)", "-0.006", "(0.007)", "-0.040***", "(0.011)",
+             "-0.138***", "(0.009)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, energy_source)
+  
+  # ============================================================
+  # SECTION 3: Green Energy systems
+  # ============================================================
+  
+  green_energy <- data.frame(
+    section = rep("Green Energy systems", 6),
+    variable = c(
+      "Heat pump", "",
+      "Solar-cells", "",
+      "Solar-heating", ""
+    ),
+    col1 = c("0.011***", "(0.003)", "0.041***", "(0.003)", "0.023***", "(0.004)"),
+    col2 = c("0.007***", "(0.002)", "0.025***", "(0.002)", "0.017***", "(0.002)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, green_energy)
+  
+  # ============================================================
+  # SECTION 4: Renovation costs and benefits
+  # ============================================================
+  
+  renovation_costs <- data.frame(
+    section = rep("Renovation costs and benefits", 4),
+    variable = c(
+      "log(TICP + 1)", "",
+      "log(TECS + 1)", ""
+    ),
+    col1 = c("0.000*", "(0.000)", "-0.007***", "(0.000)"),
+    col2 = c("-0.003***", "(0.000)", "-0.009***", "(0.001)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, renovation_costs)
+  
+  # ============================================================
+  # SECTION 5: Label Jump
+  # ============================================================
+  
+  label_jump <- data.frame(
+    section = rep("Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category", 16),
+    variable = c(
+      "Jump up by 1 label", "",
+      "Jump up by 2 labels", "",
+      "Jump up by 3 labels", "",
+      "Jump up by 4 labels", "",
+      "Jump up by 5 labels", "",
+      "Jump up by 6 labels", "",
+      "Jump up by 7 labels", "",
+      "Jump up by 8 labels", ""
+    ),
+    col1 = c("-0.008***", "(0.002)", "0.017***", "(0.003)", "0.041***", "(0.004)",
+             "0.031***", "(0.005)", "0.008", "(0.008)", "-0.038***", "(0.011)",
+             "-0.036*", "(0.019)", "-0.099***", "(0.026)"),
+    col2 = c("0.020***", "(0.002)", "0.041***", "(0.003)", "0.053***", "(0.004)",
+             "0.046***", "(0.005)", "0.052***", "(0.007)", "0.023**", "(0.010)",
+             "0.028", "(0.018)", "-0.009", "(0.029)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, label_jump)
+  
+  # ============================================================
+  # SECTION 6: Type of renovations needed (from second table)
+  # ============================================================
+  
+  renovations <- data.frame(
+    section = rep("Type of renovations needed", 24),
+    variable = c(
+      "Roof and attic renovation", "",
+      "Walls renovation", "",
+      "Install Solar-cells", "",
+      "Heating system renovation", "",
+      "Water system renovation", "",
+      "Floor renovation", "",
+      "Window and door renovation", "",
+      "Install heatpumps", "",
+      "Other renovations", "",
+      "Install solar-heating", "",
+      "Ventilation renovation", "",
+      "Install District heating", ""
+    ),
+    col1 = c("-0.022***", "(0.002)", "-0.007***", "(0.002)", "0.019***", "(0.002)",
+             "-0.013***", "(0.002)", "-0.001", "(0.002)", "-0.041***", "(0.002)",
+             "-0.043***", "(0.002)", "-0.012***", "(0.003)", "-0.030***", "(0.002)",
+             "0.005**", "(0.002)", "-0.001", "(0.006)", "0.062***", "(0.012)"),
+    col2 = c("-0.022***", "(0.002)", "-0.006***", "(0.002)", "-0.011***", "(0.002)",
+             "-0.018***", "(0.002)", "0.010***", "(0.002)", "-0.048***", "(0.002)",
+             "-0.066***", "(0.002)", "-0.003", "(0.003)", "-0.020***", "(0.002)",
+             "-0.013***", "(0.002)", "-0.014***", "(0.005)", "0.069***", "(0.014)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, renovations)
+  
+  # ============================================================
+  # SECTION 7: Controls and Summary Statistics - REORDERED
+  # ============================================================
+  
+  controls <- data.frame(
+    section = rep("", 11),  # Empty section - no header will appear
+    variable = c(
+      # Model fit statistics first (on top)
+      "R²",
+      "R² Adjusted",
+      "R² Within Adjusted",
+      "RMSE",
+      "Number of Observations",
+      # Then controls
+      "Property characteristics controls",
+      "Property quality controls",
+      "Geographical controls",
+      "Time Fixed effects (Month and Year)",
+      "Place Fixed effects (4-digit postal code)",
+      "Time × Place Fixed effect"
+    ),
+    col1 = c("0.7525", "0.7056", "0.4494", "0.3790", "352,463", 
+             "Yes", "Yes", "Yes", "Yes", "Yes", "Yes"),
+    col2 = c("0.7574", "0.7192", "0.4423", "0.3789", "376,331",
+             "Yes", "Yes", "Yes", "Yes", "Yes", "Yes"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, controls)
+  
+  return(df)
+}
+
+# Create the table data
+table_data <- create_policy_table()
+
+```
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# Function to create badge HTML
+create_badge <- function(value) {
+  if (value == "Yes") {
+    return('<span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span>')
+  } else if (value == "No") {
+    return('<span style="display: inline-block; padding: 2px 12px; background-color: #f44336; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✗ No</span>')
+  } else {
+    return(value)
+  }
+}
+
+# Apply badge formatting to Yes/No values in the dataframe
+table_data_formatted <- table_data %>%
+  mutate(
+    col1 = ifelse(variable %in% c("Property characteristics controls", 
+                                  "Property quality controls",
+                                  "Geographical controls",
+                                  "Time Fixed effects (Month and Year)",
+                                  "Place Fixed effects (4-digit postal code)",
+                                  "Time × Place Fixed effect"),
+                  sapply(col1, create_badge), col1),
+    col2 = ifelse(variable %in% c("Property characteristics controls", 
+                                  "Property quality controls",
+                                  "Geographical controls",
+                                  "Time Fixed effects (Month and Year)",
+                                  "Place Fixed effects (4-digit postal code)",
+                                  "Time × Place Fixed effect"),
+                  sapply(col2, create_badge), col2)
+  )
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# Create the gt table with colored badges
+table_data_formatted %>%
+  gt(
+    groupname_col = "section"
+  ) %>%
+  tab_header(
+    title = md("**Policy Effect - Before vs After Policy**")
+  ) %>%
+  tab_spanner(
+    label = md("**Dependent variables: Ln(Price)**"),
+    columns = c(col1, col2)
+  ) %>%
+  cols_label(
+    variable = "",
+    col1 = "(1) Before Policy",
+    col2 = "(2) After Policy"
+  ) %>%
+  # Style the section headers (row groups)
+  tab_style(
+    style = list(
+      cell_text(weight = "bold", style = "italic", size = px(14)),
+      cell_borders(sides = "bottom", color = "black", weight = px(1.5))
+    ),
+    locations = cells_row_groups()
+  ) %>%
+  # Allow HTML in the table cells
+  fmt_markdown(
+    columns = c(col1, col2)
+  ) %>%
+  # Bold the significance stars in the table
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+    ),
+    locations = cells_body(
+      columns = c(col1, col2),
+      rows = grepl("\\*\\*\\*|\\*\\*|\\*", 
+                   paste(table_data_formatted$col1, table_data_formatted$col2))
+    )
+  ) %>%
+  # Make R² values bold
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+    ),
+    locations = cells_body(
+      rows = table_data_formatted$variable %in% c("R²", "R² Adjusted", "R² Within Adjusted")
+    )
+  ) %>%
+  tab_options(
+    table.font.size = px(12),
+    heading.title.font.size = px(16),
+    column_labels.font.weight = "bold",
+    row_group.font.weight = "bold",
+    row_group.font.size = px(12),
+    table.width = pct(100),
+    row_group.padding = px(10)
+  ) %>%
+  # Use tab_source_note for footnote
+  tab_source_note(
+    source_note = md("Heteroscedasticity-robust standard errors in parentheses. Indicators of significance level: * p < 0.1, ** p < 0.05, *** p < 0.01. Dependent variable: Natural logarithm of transaction price. TICP - Total investments cost for profitable renovations. TECS - Total energy cost saved from all renovations.")
+  )
+```
+:::

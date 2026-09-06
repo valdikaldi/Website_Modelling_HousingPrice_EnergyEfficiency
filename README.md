@@ -23,3 +23,31 @@ The website was made using Quarto.
 
 [Button Click]: https://img.shields.io/badge/View_Site-37a779?style=for-the-badge
 [Link]: https://valdikaldi.github.io/Website_Modelling_HousingPrice_EnergyEfficiency/
+
+
+
+
+# To do list 
+
+[] - Finish setting up chapters 
+    [] - setup regression results as CSV files 
+    [] - 6.1 main results 
+        [] - add the text from paper 
+        [] - add regression results table or just image  
+    [] - 6.2 Market segment 
+        [] - add the text from paper 
+        [] - add regression results table or just image  
+    [] - 6.3 policy effect  
+        [] - add the text from paper 
+        [] - add regression results table or just image  
+    [] - 6.4 robustness
+        [] - add the text from paper 
+        [] - add regression results table or just image  
+    [] - 7 Discussion 
+        [X] - text 
+    [] - APPENDIX 
+        [] - A. Literature Overview
+        [] - B. Calorific Values
+        [] - C. Text Classification models: All training results
+        [] - D. Results - additional Information
+        [] - E. Additional figures

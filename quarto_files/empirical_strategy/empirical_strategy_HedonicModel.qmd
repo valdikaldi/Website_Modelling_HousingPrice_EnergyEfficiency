@@ -26,14 +26,13 @@ The hedonic model essentially consists of regressions of house value against the
 
 $$
 V = f(X,G,Q,E)
-$${#eq-utility}
+$$ {#eq-utility}
 
 Where V represents the market value of the property (here transaction price); X is a vector of variables describing property characteristics; G is a vector of geographical factors which describes the surroundings of the property and any location attributes (e.g., distance to the central business district, etc.). Q is a vector of variables quantifying the quality/condition of the property, and E represents a vector of energy-efficient variables. To quantify the attribute's effect on price in an econometrics setting, the majority of studies employ a hedonic regression, as will we. As Figure @fig-literature_variables shows, most studies use a logarithmic transformation for their dependent variable, as demonstrated below:
 
 $$
 \ln(V) = \beta_{0} + \beta_{1} \mathbf{X} + \beta_{2} \mathbf{G} + \beta_{3} \mathbf{Q} + \beta_{4} \mathbf{E} + e
-$${#eq-logarithm}
-
+$$ {#eq-logarithm}
 
 Where e is the error term capturing unobserved factors affecting property prices. @malpezzi_hedonic_2002 points out that the log-linear form has a couple of advantages. Among the benefits he points out is that taking the logarithm of the dependent variable offers a more straightforward and more appealing interpretation. As an example, if the coefficient of a variable representing energy efficiency, such as the label B, is 0,065, then the approximation of the percentage change can be derived using the method constructed by @halvorsen_interpretation_1980,
 

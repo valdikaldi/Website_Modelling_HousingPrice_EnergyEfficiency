@@ -14,13 +14,13 @@ format:
          <link rel="icon" type="image/png" href="../assets/cover.jpg">
 ---
 
-# 3. Literature review
+# 3. Literature review  {#sec-literature-review}
 
 <!-- % ------------------------------------------------------- Begin text -->
 
 <!-- % ===================== General introduction about the field of research -->
 
-::: paratext
+::::: paratext
 A rising body of research has emerged over the past decades investigating the effects of energy efficiency on the housing market. This section will contain a review of related studies that focus on the residential property markets. With that being said, It can be very challenging to compare these types of studies. Buildings come in a wide range of forms and a variety of factors determine their market value at any particular point in time, including size, age, design, location, and quality condition. Moreover, there are many factors in which the studies differ such as methodologies used to derive robust results, the data, and the energy efficiency scheme system used in the country of interest and the functional form of variables. The majority of studies that will be reviewed in this chapter are studies that investigate the residential housing markets in countries that follow the EPC scheme. The reason for this is to mitigate to some degree the major differences between the studies. Given the impracticality of an entire list of research, a simple overview of all studies taken into consideration in this chapter are provided in [Appendix A: Literature Review](appendix.qmd#a.-literature-review).
 
 @fig-literature_epceffect displays the measured price premium and price discount for energy labels from selected papers that find significant price premiums. Note that the letter “X” on the plots represents insignificant results for a given energy label, while the triangle represents categories not considered by the paper. The circle represents the reference label, also referred to as the hold-out category. As illustrated in @fig-literature_epceffect, there exists a notable disparity in price premiums among countries, spanning from 1.3% in Finland to as high as 55% in Italy.
@@ -1120,4 +1120,4 @@ plots_row <- grid.arrange(variable_dependent,
                           nrow = 3,
                           ncol = 2)
 ```
-:::
+:::::

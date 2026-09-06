@@ -4,15 +4,15 @@
 
 # 6.1 Main results
 
-The key results of the analysis are summarised in @tbl-main-results. Models 1 to 4 estimate @eq-baseline-model, incorporating additional control variables and fixed effects, until reaching the complete specification of @eq-final-regression in Model 6. The EPC labels are all highly significant at the 0.01% level for all models.
+The key results of the analysis are summarised in @tbl-main-results. Models 1 to 4 estimate @eq-main_1, incorporating additional control variables and fixed effects, until reaching the complete specification of @eq-main_2 in Model 6. The EPC labels are all highly significant at the 0.01% level for all models.
 
 Model 1 has a parsimonious specification. The model includes only EPC labels and basic property characteristics to establish a baseline understanding.
 
-As highlighted in @sec-data, there is a noticeable relationship between energy-efficient labels and the year of construction. While newer properties generally exhibit better energy efficiency due to updated building standards, relying solely on construction years may not fully capture all aspects of energy efficiency, given potential changes over a building's life cycle until its sale. Therefore, additional factors are added in Model 2, such as energy-related attributes, roof and wall material of the property, along with the timing of significant property renovations categorised over periodic intervals.
+As highlighted in @fig-EPC_and_buildingConstruction, there is a noticeable relationship between energy-efficient labels and the year of construction. While newer properties generally exhibit better energy efficiency due to updated building standards, relying solely on construction years may not fully capture all aspects of energy efficiency, given potential changes over a building's life cycle until its sale. Therefore, additional factors are added in Model 2, such as energy-related attributes, roof and wall material of the property, along with the timing of significant property renovations categorised over periodic intervals.
 
 Moreover, one might argue that the number of rooms is insufficient, as it leaves out important quality details, such as the presence of a garage, conservatory, pool, etc. Therefore, in Model 3, we add additional structural features, such as whether the property has a detached or built-in garage, outhouse or carport, as well as a swimming pool. Finally, fine-grained geographical characteristics of property surroundings are added in Model 4 to further control for micro factors.
 
-Excluding Model 2, the relationship between EPC labels and property prices strengthens as more property characteristics and external features are considered, showing an upward trend. With label D as the reference category, Model 4, the main specification for @eq-baseline-model, reveals that properties with A2020, A2015, and A2010 labels command average price premiums of 18.6%, 16.4%, and 11.3%, respectively, compared to properties with a D label. Additionally, properties labelled B and C transact at average premiums of 7.6% and 4.7%, respectively. In contrast, properties with less energy-efficient labels E, F, and G are sold at price discounts of 7.9%, 15.8%, and 36.5%, respectively.
+Excluding Model 2, the relationship between EPC labels and property prices strengthens as more property characteristics and external features are considered, showing an upward trend. With label D as the reference category, Model 4, the main specification for @eq-main_1, reveals that properties with A2020, A2015, and A2010 labels command average price premiums of 18.6%, 16.4%, and 11.3%, respectively, compared to properties with a D label. Additionally, properties labelled B and C transact at average premiums of 7.6% and 4.7%, respectively. In contrast, properties with less energy-efficient labels E, F, and G are sold at price discounts of 7.9%, 15.8%, and 36.5%, respectively.
 
 From Model 4, we obtain an $R^2$ of 0.6485, indicating that the model can explain 64.85% of the variance in property prices, reflecting a strong overall fit. However, we obtain a within $R^2$ of 0.382, which shows that we capture 38.2% of the variation in property prices within the fixed-effects clusters. The low within $R^2$ suggests significant residual variation within these groups, implying that while the fixed effects account for some local and temporal factors, unobserved influences remain.
 
@@ -70,6 +70,415 @@ In Models 1 to 4, where we successively add control variables related to propert
 
 The effect diminishes further when we include the interaction fixed effect between time and 4-digit postal code, emphasising the importance of including comprehensive property characteristics in hedonic pricing models, as the previous impact of EPC labels on property prices was most likely confounded by the underlying renovation potential.
 
-
-
 <!-- ADD REGRESSION TABLE HERE  -->
+::: {#tbl-main-results}
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# Load required libraries
+library(gt)
+library(dplyr)
+
+
+# Function to create the combined table with sections appearing only once
+create_combined_table <- function() {
+  
+  # Initialize empty dataframe
+  df <- data.frame(
+    section = character(),
+    variable = character(),
+    col1 = character(),
+    col2 = character(),
+    col3 = character(),
+    col4 = character(),
+    col5 = character(),
+    col6 = character(),
+    stringsAsFactors = FALSE
+  )
+  
+  # ============================================================
+  # SECTION 1: Current Energy label (D as reference)
+  # ============================================================
+  
+  energy_labels <- data.frame(
+    section = rep("Current Energy label: D as a reference category", 16),
+    variable = c(
+      "EPC label A2020", "", 
+      "EPC label A2015", "",
+      "EPC label A2010", "",
+      "EPC label B", "",
+      "EPC label C", "",
+      "EPC label E", "",
+      "EPC label F", "",
+      "EPC label G", ""
+    ),
+    col1 = c("0.163***", "(0.008)", "0.134***", "(0.007)", "0.101***", "(0.004)",
+             "0.068***", "(0.003)", "0.047***", "(0.002)", "-0.074***", "(0.002)",
+             "-0.148***", "(0.003)", "-0.343***", "(0.004)"),
+    col2 = c("0.138***", "(0.008)", "0.113***", "(0.007)", "0.078***", "(0.004)",
+             "0.044***", "(0.003)", "0.034***", "(0.002)", "-0.054***", "(0.002)",
+             "-0.109***", "(0.003)", "-0.277***", "(0.004)"),
+    col3 = c("0.164***", "(0.008)", "0.144***", "(0.007)", "0.107***", "(0.004)",
+             "0.064***", "(0.003)", "0.045***", "(0.001)", "-0.074***", "(0.002)",
+             "-0.144***", "(0.003)", "-0.310***", "(0.004)"),
+    col4 = c("0.171***", "(0.008)", "0.152***", "(0.007)", "0.107***", "(0.004)",
+             "0.073***", "(0.003)", "0.046***", "(0.001)", "-0.076***", "(0.002)",
+             "-0.147***", "(0.003)", "-0.311***", "(0.004)"),
+    col5 = c("0.099***", "(0.008)", "0.077***", "(0.007)", "0.043***", "(0.004)",
+             "0.028***", "(0.003)", "0.022***", "(0.002)", "-0.064***", "(0.002)",
+             "-0.127***", "(0.003)", "-0.270***", "(0.004)"),
+    col6 = c("0.074***", "(0.009)", "0.062***", "(0.007)", "0.026***", "(0.004)",
+             "0.022***", "(0.003)", "0.020***", "(0.002)", "-0.060***", "(0.002)",
+             "-0.118***", "(0.003)", "-0.252***", "(0.004)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, energy_labels)
+  
+  # ============================================================
+  # SECTION 2: Energy source
+  # ============================================================
+  
+  energy_source <- data.frame(
+    section = rep("Energy source: with District heating as reference category", 26),
+    variable = c(
+      "Natural Gas", "",
+      "Oil", "",
+      "Wood and District heating", "",
+      "Wood pellets", "",
+      "Wood and electricity", "",
+      "Electricity and Wood pellets", "",
+      "Electricity and District heating", "",
+      "Electricity and Natural gas", "",
+      "Electricity", "",
+      "Wood", "",
+      "Unknown", "",
+      "Other source combination", "",
+      "Electricity and Oil", ""
+    ),
+    col1 = rep("", 26),
+    col2 = c("-0.055***", "(0.002)", "-0.173***", "(0.004)", "-0.006", "(0.010)",
+             "-0.122***", "(0.006)", "-0.092***", "(0.004)", "-0.158***", "(0.005)",
+             "0.070***", "(0.004)", "-0.037***", "(0.004)", "-0.048***", "(0.003)",
+             "-0.135***", "(0.011)", "0.020***", "(0.005)", "-0.109***", "(0.007)",
+             "-0.220***", "(0.006)"),
+    col3 = c("-0.033***", "(0.002)", "-0.147***", "(0.004)", "-0.018*", "(0.010)",
+             "-0.073***", "(0.006)", "-0.015***", "(0.004)", "-0.099***", "(0.005)",
+             "0.056***", "(0.004)", "-0.022***", "(0.004)", "-0.005*", "(0.003)",
+             "-0.075***", "(0.011)", "0.033***", "(0.005)", "-0.061***", "(0.008)",
+             "-0.184***", "(0.006)"),
+    col4 = c("-0.011***", "(0.002)", "-0.090***", "(0.004)", "-0.015", "(0.010)",
+             "0.020***", "(0.006)", "0.039***", "(0.004)", "-0.014***", "(0.005)",
+             "0.055***", "(0.004)", "0.002", "(0.004)", "0.041***", "(0.003)",
+             "0.018", "(0.012)", "0.057***", "(0.005)", "0.001", "(0.008)",
+             "-0.119***", "(0.006)"),
+    col5 = c("-0.020***", "(0.002)", "-0.087***", "(0.004)", "-0.015", "(0.010)",
+             "-0.003", "(0.006)", "0.028***", "(0.004)", "-0.036***", "(0.005)",
+             "0.060***", "(0.004)", "-0.007*", "(0.004)", "0.032***", "(0.003)",
+             "-0.006", "(0.011)", "0.025***", "(0.005)", "-0.009", "(0.007)",
+             "-0.113***", "(0.006)"),
+    col6 = c("-0.026***", "(0.003)", "-0.101***", "(0.004)", "-0.016", "(0.011)",
+             "-0.006", "(0.007)", "0.007", "(0.004)", "-0.034***", "(0.006)",
+             "0.053***", "(0.004)", "-0.021***", "(0.004)", "0.019***", "(0.003)",
+             "-0.029**", "(0.012)", "0.008", "(0.005)", "-0.028***", "(0.008)",
+             "-0.122***", "(0.006)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, energy_source)
+  
+  # ============================================================
+  # SECTION 3: Green Energy systems
+  # ============================================================
+  
+  green_energy <- data.frame(
+    section = rep("Green Energy systems", 6),
+    variable = c(
+      "Heat pump", "",
+      "Solar-cells", "",
+      "Solar-heating", ""
+    ),
+    col1 = rep("", 6),
+    col2 = c("0.000", "(0.002)", "0.037***", "(0.002)", "0.030***", "(0.002)"),
+    col3 = c("-0.007***", "(0.002)", "0.029***", "(0.002)", "0.028***", "(0.002)"),
+    col4 = c("-0.007***", "(0.002)", "0.031***", "(0.002)", "0.027***", "(0.002)"),
+    col5 = c("0.001", "(0.002)", "0.034***", "(0.002)", "0.021***", "(0.002)"),
+    col6 = c("0.007***", "(0.002)", "0.033***", "(0.002)", "0.019***", "(0.002)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, green_energy)
+  
+  # ============================================================
+  # SECTION 4: Renovation costs and benefits
+  # ============================================================
+  
+  renovation_costs <- data.frame(
+    section = rep("Renovation costs and benefits", 4),
+    variable = c(
+      "log(TICP + 1)", "",
+      "log(TECS + 1)", ""
+    ),
+    col1 = rep("", 4),
+    col2 = rep("", 4),
+    col3 = rep("", 4),
+    col4 = rep("", 4),
+    col5 = c("-0.001***", "(0.000)", "-0.006***", "(0.000)"),
+    col6 = c("-0.001***", "(0.000)", "-0.007***", "(0.000)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, renovation_costs)
+  
+  # ============================================================
+  # SECTION 5: Label Jump
+  # ============================================================
+  
+  label_jump <- data.frame(
+    section = rep("Label Jump (Distance from current label to the potential label): with zero (no label jump) as reference category", 16),
+    variable = c(
+      "Jump up by 1 label", "",
+      "Jump up by 2 labels", "",
+      "Jump up by 3 labels", "",
+      "Jump up by 4 labels", "",
+      "Jump up by 5 labels", "",
+      "Jump up by 6 labels", "",
+      "Jump up by 7 labels", "",
+      "Jump up by 8 labels", ""
+    ),
+    col1 = rep("", 16),
+    col2 = rep("", 16),
+    col3 = rep("", 16),
+    col4 = rep("", 16),
+    col5 = c("-0.008***", "(0.002)", "0.012***", "(0.002)", "0.029***", "(0.003)",
+             "0.013***", "(0.003)", "-0.002", "(0.005)", "-0.037***", "(0.007)",
+             "-0.041***", "(0.012)", "-0.096***", "(0.019)"),
+    col6 = c("0.004**", "(0.002)", "0.023***", "(0.002)", "0.036***", "(0.003)",
+             "0.026***", "(0.003)", "0.019***", "(0.005)", "-0.014*", "(0.007)",
+             "-0.012", "(0.013)", "-0.062***", "(0.019)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, label_jump)
+  
+  # ============================================================
+  # SECTION 6: Type of renovations needed (from second table)
+  # ============================================================
+  
+  renovations <- data.frame(
+    section = rep("Type of renovations needed", 24),
+    variable = c(
+      "Roof and attic renovation", "",
+      "Walls renovation", "",
+      "Install Solar-cells", "",
+      "Heating system renovation", "",
+      "Water system renovation", "",
+      "Floor renovation", "",
+      "Window and door renovation", "",
+      "Install heatpumps", "",
+      "Other renovations", "",
+      "Install solar-heating", "",
+      "Ventilation renovation", "",
+      "Install District heating", ""
+    ),
+    col1 = rep("", 24),
+    col2 = rep("", 24),
+    col3 = rep("", 24),
+    col4 = rep("", 24),
+    col5 = c("-0.019***", "(0.001)", "-0.003**", "(0.001)", "0.012***", "(0.001)",
+             "-0.017***", "(0.001)", "0.010***", "(0.001)", "-0.048***", "(0.001)",
+             "-0.053***", "(0.001)", "-0.012***", "(0.002)", "-0.035***", "(0.001)",
+             "-0.002", "(0.002)", "0.011***", "(0.004)", "0.076***", "(0.009)"),
+    col6 = c("-0.020***", "(0.001)", "-0.006***", "(0.001)", "0.004***", "(0.001)",
+             "-0.016***", "(0.001)", "0.005***", "(0.001)", "-0.044***", "(0.001)",
+             "-0.054***", "(0.001)", "-0.009***", "(0.002)", "-0.025***", "(0.001)",
+             "0.001", "(0.002)", "-0.006", "(0.004)", "0.069***", "(0.009)"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, renovations)
+  
+  # ============================================================
+  # SECTION 7: Controls and Summary Statistics - REORDERED
+  # ============================================================
+  
+  controls <- data.frame(
+    section = rep("", 11),  # Empty section - no header will appear
+    variable = c(
+      # Model fit statistics first (on top)
+      "R²",
+      "R² Adjusted",
+      "R² Within Adjusted",
+      "RMSE",
+      "Number of Observations",
+      # Then controls
+      "Property characteristics controls",
+      "Property quality controls",
+      "Geographical controls",
+      "Time Fixed effects (Month and Year)",
+      "Place Fixed effects (4-digit postal code)",
+      "Time × Place Fixed effect"
+    ),
+    col1 = c("0.5916", "0.5908", "0.2819", "0.4931", "728,794", 
+             "Yes", "Yes", "No", "Yes", "Yes", "No"),
+    col2 = c("0.6034", "0.6026", "0.3026", "0.4859", "728,794",
+             "Yes", "Yes", "No", "Yes", "Yes", "No"),
+    col3 = c("0.6410", "0.6402", "0.3687", "0.4623", "728,794",
+             "Yes", "Yes", "No", "Yes", "Yes", "No"),
+    col4 = c("0.6485", "0.6477", "0.3818", "0.4575", "728,794",
+             "Yes", "Yes", "Yes", "Yes", "Yes", "No"),
+    col5 = c("0.6519", "0.6512", "0.3879", "0.4552", "728,794",
+             "Yes", "Yes", "Yes", "Yes", "Yes", "No"),
+    col6 = c("0.7571", "0.7156", "0.4420", "0.3803", "728,794",
+             "Yes", "Yes", "Yes", "Yes", "Yes", "Yes"),
+    stringsAsFactors = FALSE
+  )
+  
+  df <- rbind(df, controls)
+  
+  return(df)
+}
+
+# Create the table data
+table_data <- create_combined_table()
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+ 
+
+# Function to create badge HTML
+create_badge <- function(value) {
+  if (value == "Yes") {
+    return('<span style="display: inline-block; padding: 2px 12px; background-color: #4CAF50; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✓ Yes</span>')
+  } else if (value == "No") {
+    return('<span style="display: inline-block; padding: 2px 12px; background-color: #f44336; color: white; border-radius: 12px; font-size: 11px; font-weight: 500; opacity: 0.85; text-align: center;">✗ No</span>')
+  } else {
+    return(value)
+  }
+}
+
+# Apply badge formatting to Yes/No values in the dataframe
+table_data_formatted <- table_data %>%
+  mutate(
+    col1 = ifelse(variable %in% c("Property characteristics controls", 
+                                  "Property quality controls",
+                                  "Geographical controls",
+                                  "Time Fixed effects (Month and Year)",
+                                  "Place Fixed effects (4-digit postal code)",
+                                  "Time × Place Fixed effect"),
+                  sapply(col1, create_badge), col1),
+    col2 = ifelse(variable %in% c("Property characteristics controls", 
+                                  "Property quality controls",
+                                  "Geographical controls",
+                                  "Time Fixed effects (Month and Year)",
+                                  "Place Fixed effects (4-digit postal code)",
+                                  "Time × Place Fixed effect"),
+                  sapply(col2, create_badge), col2),
+    col3 = ifelse(variable %in% c("Property characteristics controls", 
+                                  "Property quality controls",
+                                  "Geographical controls",
+                                  "Time Fixed effects (Month and Year)",
+                                  "Place Fixed effects (4-digit postal code)",
+                                  "Time × Place Fixed effect"),
+                  sapply(col3, create_badge), col3),
+    col4 = ifelse(variable %in% c("Property characteristics controls", 
+                                  "Property quality controls",
+                                  "Geographical controls",
+                                  "Time Fixed effects (Month and Year)",
+                                  "Place Fixed effects (4-digit postal code)",
+                                  "Time × Place Fixed effect"),
+                  sapply(col4, create_badge), col4),
+    col5 = ifelse(variable %in% c("Property characteristics controls", 
+                                  "Property quality controls",
+                                  "Geographical controls",
+                                  "Time Fixed effects (Month and Year)",
+                                  "Place Fixed effects (4-digit postal code)",
+                                  "Time × Place Fixed effect"),
+                  sapply(col5, create_badge), col5),
+    col6 = ifelse(variable %in% c("Property characteristics controls", 
+                                  "Property quality controls",
+                                  "Geographical controls",
+                                  "Time Fixed effects (Month and Year)",
+                                  "Place Fixed effects (4-digit postal code)",
+                                  "Time × Place Fixed effect"),
+                  sapply(col6, create_badge), col6)
+  )
+
+
+# Create the gt table with colored badges
+table_data_formatted %>%
+  gt(
+    groupname_col = "section"
+  ) %>%
+  tab_header(
+    title = md("**Main Results - Energy Efficiency and Potential Energy Efficiency**")
+  ) %>%
+  tab_spanner(
+    label = md("**Dependent variables: Ln(Price)**"),
+    columns = c(col1, col2, col3, col4, col5, col6)
+  ) %>%
+  cols_label(
+    variable = "",
+    col1 = "(1)",
+    col2 = "(2)",
+    col3 = "(3)",
+    col4 = "(4)",
+    col5 = "(5)",
+    col6 = "(6)"
+  ) %>%
+  # Style the section headers (row groups)
+  tab_style(
+    style = list(
+      cell_text(weight = "bold", style = "italic", size = px(14)),
+      cell_borders(sides = "bottom", color = "black", weight = px(1.5))
+    ),
+    locations = cells_row_groups()
+  ) %>%
+  # Allow HTML in the table cells
+  fmt_markdown(
+    columns = c(col1, col2, col3, col4, col5, col6)
+  ) %>%
+  # Bold the significance stars in the table
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+    ),
+    locations = cells_body(
+      columns = c(col1, col2, col3, col4, col5, col6),
+      rows = grepl("\\*\\*\\*|\\*\\*|\\*", 
+                   paste(table_data_formatted$col1, table_data_formatted$col2, 
+                         table_data_formatted$col3, table_data_formatted$col4, 
+                         table_data_formatted$col5, table_data_formatted$col6))
+    )
+  ) %>%
+  # Make R² values bold
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+    ),
+    locations = cells_body(
+      rows = table_data_formatted$variable %in% c("R²", "R² Adjusted", "R² Within Adjusted")
+    )
+  ) %>%
+  tab_options(
+    table.font.size = px(12),
+    heading.title.font.size = px(16),
+    column_labels.font.weight = "bold",
+    row_group.font.weight = "bold",
+    row_group.font.size = px(12),
+    table.width = pct(100),
+    row_group.padding = px(10)
+  ) %>%
+  # Use tab_source_note for footnote
+  tab_source_note(
+    source_note = md("Heteroscedasticity-robust standard errors in parentheses. Indicators of significance level: * p < 0.1, ** p < 0.05, *** p < 0.01. Dependent variable: Natural logarithm of transaction price. TICP - Total investments cost for profitable renovations. TECS - Total energy cost saved from all renovations.")
+  )
+
+```
+:::
