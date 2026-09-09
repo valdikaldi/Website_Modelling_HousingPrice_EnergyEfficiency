@@ -1,4 +1,4 @@
-# R enviroment
+# R environment
 .Rproj.user/
 .Rhistory
 .RData
@@ -8,6 +8,7 @@
 .quarto/
 _site/
 _book/
+*.quarto_ipynb
 
 # LaTeX / PDF build artifacts
 *.aux
@@ -19,5 +20,7 @@ _book/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-/.quarto/
-**/*.quarto_ipynb
+
+# Generated LaTeX / PDF
+*.tex
+*.pdf
